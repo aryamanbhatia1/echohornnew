@@ -1,6 +1,8 @@
 from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from django.utils import timezone
 from django.shortcuts import get_object_or_404
 from .models import Vehicle, Driver, DriverVehicleAssignment
 from .serializers import (
@@ -8,6 +10,9 @@ from .serializers import (
     DriverVehicleAssignmentSerializer
 )
 from accounts.models import User
+from consumer.models import Booking
+from consumer.serializers import BookingSerializer
+from core.services import refresh_contractor_metrics
 
 
 class VehicleListCreateView(generics.ListCreateAPIView):
@@ -21,6 +26,7 @@ class VehicleListCreateView(generics.ListCreateAPIView):
     
     def perform_create(self, serializer):
         serializer.save(contractor=self.request.user)
+        refresh_contractor_metrics(self.request.user)
 
 
 class VehicleDetailView(generics.RetrieveUpdateDestroyAPIView):
@@ -95,6 +101,7 @@ class AddFleetDriverView(generics.CreateAPIView):
             user=driver_user,
             contractor=request.user
         )
+        refresh_contractor_metrics(request.user)
         
         serializer = DriverSerializer(driver)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -134,6 +141,7 @@ class RegisterAsIndependentDriverView(generics.CreateAPIView):
             user=request.user,
             contractor=request.user  # Independent driver
         )
+        refresh_contractor_metrics(request.user)
         
         serializer = DriverSerializer(driver)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -172,3 +180,52 @@ class DriverVehicleAssignmentListView(generics.ListAPIView):
         return DriverVehicleAssignment.objects.filter(
             driver__contractor=self.request.user
         )
+
+
+class ContractorBookingListView(generics.ListAPIView):
+    serializer_class = BookingSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Booking.objects.filter(contractor=self.request.user).select_related(
+            'service_request',
+            'driver__user',
+            'vehicle',
+            'contractor',
+        )
+
+
+class BookingDecisionView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, booking_id):
+        booking = get_object_or_404(Booking, id=booking_id, contractor=request.user)
+        action = request.data.get('action')
+
+        if booking.status != 'awaiting_acceptance':
+            return Response(
+                {"error": "Only bookings awaiting acceptance can be updated here."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        if action == 'accept':
+            booking.status = 'accepted'
+            booking.booking_confirmed_at = booking.booking_confirmed_at or timezone.now()
+            booking.save(update_fields=['status', 'booking_confirmed_at', 'updated_at'])
+            booking.driver.status = 'on_trip'
+            booking.driver.current_booking = booking
+            booking.driver.save(update_fields=['status', 'current_booking', 'updated_at'])
+            booking.vehicle.status = 'in_use'
+            booking.vehicle.current_booking = booking
+            booking.vehicle.save(update_fields=['status', 'current_booking', 'updated_at'])
+            booking.service_request.status = 'confirmed'
+            booking.service_request.save(update_fields=['status', 'updated_at'])
+        elif action == 'reject':
+            booking.status = 'rejected'
+            booking.save(update_fields=['status', 'updated_at'])
+            booking.service_request.status = 'pending'
+            booking.service_request.save(update_fields=['status', 'updated_at'])
+        else:
+            return Response({"error": "action must be 'accept' or 'reject'."}, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(BookingSerializer(booking).data)

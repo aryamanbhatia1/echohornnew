@@ -29,9 +29,9 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.85, delay: 0.28, ease: "easeInOut" }}
       className={`fixed top-0 left-0 w-full ${
         scrolled ? "bg-black/50" : "bg-black/30"
       } backdrop-blur-sm border-b border-white/10 z-50 transition-all duration-300`}
@@ -87,7 +87,7 @@ const Header = () => {
           </ul>
         </div>
 
-        {/* Right side: Book a Trial Button */}
+        {/* Right side: Primary CTA */}
         <Link href="/get-started" data-testid="book-trial-button">
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -96,7 +96,7 @@ const Header = () => {
           >
             <span className="absolute inset-0 w-full h-full bg-[#FF6347] rounded-full scale-0 group-hover:scale-150 transition-transform duration-300 ease-in-out" />
             <span className="relative z-10 flex items-center gap-2">
-              Book A Trial
+              Start Booking
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

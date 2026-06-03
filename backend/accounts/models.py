@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from phonenumber_field.modelfields import PhoneNumberField
 
 class UserManager(BaseUserManager):
@@ -30,6 +31,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     
     USER_TYPE_CHOICES = (
         ('consumer', 'Consumer'),
+        ('driver', 'Driver'),
         ('contractor', 'Contractor'),
     )
     
@@ -129,3 +131,58 @@ class ContractorProfile(models.Model):
         if self.contractor_type == 'company':
             return f"Contractor: {self.company_name}"
         return f"Contractor: {self.user.get_full_name()}"
+
+
+class DriverProfile(models.Model):
+    DRIVER_TYPE_CHOICES = (
+        ('independent', 'Independent'),
+        ('fleet_driver', 'Fleet Driver'),
+    )
+
+    ROUTE_TYPE_CHOICES = (
+        ('local', 'Local'),
+        ('intercity', 'Intercity'),
+        ('both', 'Both'),
+    )
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='driver_profile')
+    driver_type = models.CharField(max_length=20, choices=DRIVER_TYPE_CHOICES, default='independent')
+    aadhaar_number = models.CharField(
+        max_length=12,
+        unique=True,
+        validators=[RegexValidator(r'^\d{12}$', 'Aadhaar number must be exactly 12 digits.')],
+    )
+    date_of_birth = models.DateField()
+    license_number = models.CharField(max_length=30, unique=True)
+    license_expiry_date = models.DateField()
+    years_of_experience = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(60)])
+    home_region = models.CharField(max_length=120)
+    currently_available = models.BooleanField(default=True)
+    preferred_route_types = models.CharField(max_length=20, choices=ROUTE_TYPE_CHOICES, default='both')
+    emergency_contact_name = models.CharField(max_length=120)
+    emergency_contact_phone = PhoneNumberField()
+    safety_training_completed = models.BooleanField(default=False)
+    fixed_income_per_trip = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    driver_points = models.PositiveIntegerField(default=0)
+    safety_score = models.DecimalField(
+        max_digits=4,
+        decimal_places=2,
+        default=4.50,
+        validators=[MinValueValidator(0), MaxValueValidator(5)],
+    )
+    predicted_rating = models.DecimalField(
+        max_digits=4,
+        decimal_places=2,
+        default=4.00,
+        validators=[MinValueValidator(0), MaxValueValidator(5)],
+    )
+    total_distance_km = models.PositiveIntegerField(default=0)
+    total_completed_deliveries = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"Driver Profile: {self.user.get_full_name()}"

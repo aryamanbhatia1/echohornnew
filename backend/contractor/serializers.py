@@ -34,6 +34,8 @@ class DriverSerializer(serializers.ModelSerializer):
     license_number = serializers.SerializerMethodField()
     years_of_experience = serializers.SerializerMethodField()
     home_region = serializers.SerializerMethodField()
+    driver_points = serializers.SerializerMethodField()
+    predicted_rating = serializers.SerializerMethodField()
     
     contractor_name = serializers.CharField(source='contractor.get_full_name', read_only=True)
     is_independent = serializers.BooleanField(read_only=True)
@@ -44,6 +46,7 @@ class DriverSerializer(serializers.ModelSerializer):
             'id', 'user', 'name', 'email', 'phone_number',
             'contractor', 'contractor_name', 'is_independent',
             'license_number', 'years_of_experience', 'home_region',
+            'driver_points', 'predicted_rating',
             'status', 'current_booking',
             'total_trips_completed', 'average_rating', 'efficiency_score',
             'created_at', 'updated_at'
@@ -64,6 +67,16 @@ class DriverSerializer(serializers.ModelSerializer):
     def get_home_region(self, obj):
         if hasattr(obj.user, 'driver_profile'):
             return obj.user.driver_profile.home_region
+        return None
+
+    def get_driver_points(self, obj):
+        if hasattr(obj.user, 'driver_profile'):
+            return obj.user.driver_profile.driver_points
+        return 0
+
+    def get_predicted_rating(self, obj):
+        if hasattr(obj.user, 'driver_profile'):
+            return obj.user.driver_profile.predicted_rating
         return None
 
 
@@ -90,13 +103,17 @@ class AvailableDriverSerializer(serializers.ModelSerializer):
     # Driver profile details
     license_number = serializers.SerializerMethodField()
     years_of_experience = serializers.SerializerMethodField()
+    driver_points = serializers.SerializerMethodField()
+    predicted_rating = serializers.SerializerMethodField()
+    fixed_income_per_trip = serializers.SerializerMethodField()
     
     class Meta:
         model = Driver
         fields = [
             'id', 'name', 'is_independent', 'contractor_name', 'contractor_type',
             'phone_number', 'license_number', 'years_of_experience',
-            'average_rating', 'efficiency_score', 'assigned_vehicles'
+            'average_rating', 'efficiency_score', 'driver_points',
+            'predicted_rating', 'fixed_income_per_trip', 'assigned_vehicles'
         ]
     
     def get_contractor_type(self, obj):
@@ -118,3 +135,18 @@ class AvailableDriverSerializer(serializers.ModelSerializer):
         if hasattr(obj.user, 'driver_profile'):
             return obj.user.driver_profile.years_of_experience
         return 0
+
+    def get_driver_points(self, obj):
+        if hasattr(obj.user, 'driver_profile'):
+            return obj.user.driver_profile.driver_points
+        return 0
+
+    def get_predicted_rating(self, obj):
+        if hasattr(obj.user, 'driver_profile'):
+            return obj.user.driver_profile.predicted_rating
+        return None
+
+    def get_fixed_income_per_trip(self, obj):
+        if hasattr(obj.user, 'driver_profile'):
+            return obj.user.driver_profile.fixed_income_per_trip
+        return None

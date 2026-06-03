@@ -1,6 +1,20 @@
 from rest_framework import serializers
 from django.contrib.auth.password_validation import validate_password
-from .models import User, ConsumerProfile, ContractorProfile
+from .models import User, ConsumerProfile, ContractorProfile, DriverProfile
+
+
+PLACEHOLDER_ADDRESS_WORDS = {'test', 'fake', 'unknown', 'asdf', 'n/a', 'na', 'dummy'}
+
+
+def validate_real_text(value, field_name='value'):
+    if not value or not str(value).strip():
+        raise serializers.ValidationError(f"{field_name} is required.")
+    cleaned = str(value).strip()
+    if cleaned.lower() in PLACEHOLDER_ADDRESS_WORDS:
+        raise serializers.ValidationError(f"Enter a real {field_name.lower()}.")
+    if len(cleaned) < 3:
+        raise serializers.ValidationError(f"{field_name} must be at least 3 characters.")
+    return cleaned
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -20,8 +34,11 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError({"password": "Password fields didn't match."})
         
-        if attrs['user_type'] not in ['consumer', 'contractor']:
+        if attrs['user_type'] not in ['consumer', 'driver', 'contractor']:
             raise serializers.ValidationError({"user_type": "Invalid user type."})
+
+        attrs['first_name'] = validate_real_text(attrs.get('first_name'), 'First name')
+        attrs['last_name'] = validate_real_text(attrs.get('last_name'), 'Last name')
         
         return attrs
     
@@ -32,6 +49,9 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         # Create profile based on user type
         if user.user_type == 'consumer':
             ConsumerProfile.objects.create(user=user)
+        elif user.user_type == 'driver':
+            # Driver profile is completed in a separate secure step.
+            pass
         elif user.user_type == 'contractor':
             # Contractor profile will be completed later
             pass
@@ -47,6 +67,15 @@ class ConsumerProfileSerializer(serializers.ModelSerializer):
 
 
 class ContractorProfileSerializer(serializers.ModelSerializer):
+    def validate_business_address(self, value):
+        return validate_real_text(value, 'Business address')
+
+    def validate_city(self, value):
+        return validate_real_text(value, 'City')
+
+    def validate_state(self, value):
+        return validate_real_text(value, 'State')
+
     class Meta:
         model = ContractorProfile
         fields = '__all__'
@@ -54,13 +83,36 @@ class ContractorProfileSerializer(serializers.ModelSerializer):
                            'total_vehicles', 'total_drivers', 'average_rating')
 
 
+class DriverProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DriverProfile
+        fields = '__all__'
+        read_only_fields = (
+            'user',
+            'driver_points',
+            'safety_score',
+            'predicted_rating',
+            'total_distance_km',
+            'total_completed_deliveries',
+            'created_at',
+            'updated_at',
+        )
+
+    def validate_home_region(self, value):
+        return validate_real_text(value, 'Home region')
+
+    def validate_emergency_contact_name(self, value):
+        return validate_real_text(value, 'Emergency contact name')
+
+
 class UserSerializer(serializers.ModelSerializer):
     consumer_profile = ConsumerProfileSerializer(read_only=True)
+    driver_profile = DriverProfileSerializer(read_only=True)
     contractor_profile = ContractorProfileSerializer(read_only=True)
     
     class Meta:
         model = User
         fields = ('id', 'email', 'first_name', 'last_name', 'phone_number', 
                   'user_type', 'is_email_verified', 'is_phone_verified', 
-                  'consumer_profile', 'contractor_profile', 'created_at')
+                  'consumer_profile', 'driver_profile', 'contractor_profile', 'created_at')
         read_only_fields = ('id', 'is_email_verified', 'is_phone_verified', 'created_at')

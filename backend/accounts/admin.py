@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User, ConsumerProfile, ContractorProfile
+from .models import User, ConsumerProfile, ContractorProfile, DriverProfile
 
 
 @admin.register(User)
@@ -42,3 +42,27 @@ class ContractorProfileAdmin(admin.ModelAdmin):
     search_fields = ('user__email', 'company_name')
     list_filter = ('contractor_type', 'is_verified', 'city', 'state')
     readonly_fields = ('total_vehicles', 'total_drivers', 'average_rating', 'created_at', 'updated_at')
+
+
+@admin.register(DriverProfile)
+class DriverProfileAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'driver_type',
+        'license_number',
+        'home_region',
+        'currently_available',
+        'driver_points',
+        'predicted_rating',
+    )
+    search_fields = ('user__email', 'license_number', 'home_region')
+    list_filter = ('driver_type', 'currently_available', 'preferred_route_types', 'safety_training_completed')
+    readonly_fields = (
+        'driver_points',
+        'safety_score',
+        'predicted_rating',
+        'total_distance_km',
+        'total_completed_deliveries',
+        'created_at',
+        'updated_at',
+    )

@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     ServiceRequestCreateView, ServiceRequestListView, ServiceRequestDetailView,
     AvailableDriversView, BookingCreateView, BookingListView, BookingDetailView,
-    BookingPayAdvanceView, BookingPayFullView, RatingCreateView
+    BookingPayAdvanceView, BookingPayFullView, ComplaintListCreateView, RatingCreateView
 )
 
 urlpatterns = [
@@ -25,4 +25,5 @@ urlpatterns = [
     
     # Ratings
     path('ratings/', RatingCreateView.as_view(), name='rating_create'),
+    path('complaints/', ComplaintListCreateView.as_view(), name='complaint_list_create'),
 ]

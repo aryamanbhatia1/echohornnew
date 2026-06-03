@@ -1,0 +1,2684 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[next]/internal/font/google/space_grotesk_36d91787.module.css [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "className": "space_grotesk_36d91787-module__wtPCNq__className",
+});
+}),
+"[next]/internal/font/google/space_grotesk_36d91787.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[next]/internal/font/google/space_grotesk_36d91787.module.css [app-client] (css module)");
+;
+const fontData = {
+    className: __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].className,
+    style: {
+        fontFamily: "'Space Grotesk', 'Space Grotesk Fallback'",
+        fontStyle: "normal"
+    }
+};
+if (__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].variable != null) {
+    fontData.variable = __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].variable;
+}
+const __TURBOPACK__default__export__ = fontData;
+}),
+"[next]/internal/font/google/inter_20c57e15.module.css [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "className": "inter_20c57e15-module__Xqbggq__className",
+});
+}),
+"[next]/internal/font/google/inter_20c57e15.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[next]/internal/font/google/inter_20c57e15.module.css [app-client] (css module)");
+;
+const fontData = {
+    className: __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].className,
+    style: {
+        fontFamily: "'Inter', 'Inter Fallback'",
+        fontStyle: "normal"
+    }
+};
+if (__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].variable != null) {
+    fontData.variable = __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].variable;
+}
+const __TURBOPACK__default__export__ = fontData;
+}),
+"[project]/EchoHorn/lib/demo-data.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "defaultDemoStore",
+    ()=>defaultDemoStore,
+    "routePreferences",
+    ()=>routePreferences,
+    "truckTypes",
+    ()=>truckTypes
+]);
+const truckTypes = [
+    "Mini Truck",
+    "Medium Truck",
+    "Full Truck",
+    "Trailer",
+    "Tempo"
+];
+const routePreferences = [
+    "Local",
+    "Intercity",
+    "Both"
+];
+const users = [
+    {
+        id: "owner-aq",
+        role: "fleet_owner",
+        name: "AQ Logistics",
+        email: "owner@aqlogistics.demo",
+        password: "OwnerDemo123!",
+        phone: "+91 98111 11111",
+        region: "Delhi NCR",
+        companyName: "AQ Logistics"
+    },
+    {
+        id: "consumer-riya",
+        role: "consumer",
+        name: "Riya Sharma",
+        email: "customer@aqlogistics.demo",
+        password: "CustomerDemo123!",
+        phone: "+91 98222 22222",
+        region: "Noida"
+    }
+];
+const trucks = [
+    {
+        id: "truck-101",
+        ownerId: "owner-aq",
+        registrationNumber: "HR55AQ101",
+        truckType: "Mini Truck",
+        capacityTons: 1.5,
+        region: "Delhi NCR",
+        status: "available"
+    },
+    {
+        id: "truck-102",
+        ownerId: "owner-aq",
+        registrationNumber: "HR55AQ102",
+        truckType: "Mini Truck",
+        capacityTons: 1.8,
+        region: "Noida",
+        status: "available"
+    },
+    {
+        id: "truck-201",
+        ownerId: "owner-aq",
+        registrationNumber: "HR55AQ201",
+        truckType: "Medium Truck",
+        capacityTons: 3.2,
+        region: "Gurugram",
+        status: "available"
+    },
+    {
+        id: "truck-202",
+        ownerId: "owner-aq",
+        registrationNumber: "HR55AQ202",
+        truckType: "Medium Truck",
+        capacityTons: 4.1,
+        region: "Delhi NCR",
+        status: "available"
+    },
+    {
+        id: "truck-301",
+        ownerId: "owner-aq",
+        registrationNumber: "HR55AQ301",
+        truckType: "Full Truck",
+        capacityTons: 7.5,
+        region: "Jaipur",
+        status: "available"
+    },
+    {
+        id: "truck-302",
+        ownerId: "owner-aq",
+        registrationNumber: "HR55AQ302",
+        truckType: "Full Truck",
+        capacityTons: 8.0,
+        region: "Noida",
+        status: "available"
+    },
+    {
+        id: "truck-401",
+        ownerId: "owner-aq",
+        registrationNumber: "HR55AQ401",
+        truckType: "Trailer",
+        capacityTons: 16,
+        region: "Faridabad",
+        status: "available"
+    },
+    {
+        id: "truck-501",
+        ownerId: "owner-aq",
+        registrationNumber: "HR55AQ501",
+        truckType: "Tempo",
+        capacityTons: 0.9,
+        region: "Delhi NCR",
+        status: "available"
+    }
+];
+const seededDrivers = [
+    [
+        "Arjun Malik",
+        "arjun.driver@aqlogistics.demo",
+        "truck-101",
+        4.8,
+        4.7,
+        340,
+        122,
+        5200,
+        2,
+        "Verified ID, seal check, live route check-ins",
+        "Both",
+        "Delhi NCR"
+    ],
+    [
+        "Neeraj Kumar",
+        "neeraj.driver@aqlogistics.demo",
+        "truck-201",
+        4.6,
+        4.5,
+        286,
+        94,
+        6800,
+        3,
+        "Camera-backed loading proof and safe parking compliance",
+        "Intercity",
+        "Gurugram"
+    ],
+    [
+        "Vikas Rao",
+        "vikas.driver@aqlogistics.demo",
+        "truck-301",
+        4.9,
+        4.8,
+        401,
+        158,
+        8400,
+        4,
+        "High-value goods handling and disciplined timing",
+        "Both",
+        "Noida"
+    ],
+    [
+        "Sahil Khan",
+        "sahil.driver@aqlogistics.demo",
+        "truck-102",
+        4.5,
+        4.4,
+        240,
+        85,
+        5100,
+        2,
+        "Light commercial specialist and quick pickup response",
+        "Local",
+        "Delhi NCR"
+    ],
+    [
+        "Mohit Tyagi",
+        "mohit.driver@aqlogistics.demo",
+        "truck-202",
+        4.7,
+        4.6,
+        318,
+        107,
+        6900,
+        3,
+        "Strong furniture handling and unload proof routine",
+        "Both",
+        "Ghaziabad"
+    ],
+    [
+        "Imran Sheikh",
+        "imran.driver@aqlogistics.demo",
+        "truck-302",
+        4.4,
+        4.3,
+        211,
+        73,
+        7900,
+        5,
+        "Reliable intercity completion with low claims history",
+        "Intercity",
+        "Jaipur"
+    ],
+    [
+        "Punit Solanki",
+        "punit.driver@aqlogistics.demo",
+        "truck-501",
+        4.3,
+        4.2,
+        188,
+        68,
+        4300,
+        1,
+        "Fast inner-city deliveries and flexible slots",
+        "Local",
+        "Noida"
+    ],
+    [
+        "Rahul Verma",
+        "rahul.driver@aqlogistics.demo",
+        "truck-401",
+        4.8,
+        4.7,
+        350,
+        116,
+        9900,
+        6,
+        "Heavy-load trailer operations and safety-trained",
+        "Intercity",
+        "Faridabad"
+    ],
+    [
+        "Harshdeep Gill",
+        "harsh.driver@aqlogistics.demo",
+        "truck-201",
+        4.6,
+        4.5,
+        267,
+        89,
+        6700,
+        3,
+        "Balanced ratings across punctuality and cargo care",
+        "Both",
+        "Delhi NCR"
+    ],
+    [
+        "Ankit Yadav",
+        "ankit.driver@aqlogistics.demo",
+        "truck-202",
+        4.5,
+        4.4,
+        229,
+        81,
+        6600,
+        4,
+        "Warehouse pickup discipline with careful loading",
+        "Both",
+        "Gurugram"
+    ],
+    [
+        "Deepak Rana",
+        "deepak.driver@aqlogistics.demo",
+        "truck-301",
+        4.7,
+        4.6,
+        303,
+        101,
+        8500,
+        4,
+        "Long-route specialist with strong customer reviews",
+        "Intercity",
+        "Jaipur"
+    ],
+    [
+        "Naseem Ali",
+        "naseem.driver@aqlogistics.demo",
+        "truck-102",
+        4.4,
+        4.3,
+        198,
+        71,
+        5000,
+        2,
+        "Responsive short-haul driver with clean completion record",
+        "Local",
+        "Noida"
+    ]
+];
+const driverUsers = seededDrivers.map(([name, email, , , , , , , , , , region], index)=>({
+        id: `driver-user-${index + 1}`,
+        role: "driver",
+        name,
+        email,
+        password: "DriverDemo123!",
+        phone: `+91 98333 33${String(index + 1).padStart(3, "0")}`,
+        region
+    }));
+const drivers = seededDrivers.map(([, , truckId, rating, predictedRating, points, trips, fixedIncome, etaHours, safetyNote, routePreference], index)=>({
+        id: `driver-${index + 1}`,
+        userId: `driver-user-${index + 1}`,
+        ownerId: "owner-aq",
+        truckId,
+        rating,
+        predictedRating,
+        points,
+        trips,
+        fixedIncome,
+        etaHours,
+        safetyNote,
+        routePreference,
+        available: true
+    }));
+const bookings = [
+    {
+        id: "booking-1",
+        customerId: "consumer-riya",
+        driverId: "driver-1",
+        ownerId: "owner-aq",
+        truckId: "truck-101",
+        from: "Noida Sector 18 Warehouse",
+        to: "Gurugram Golf Course Extension Road",
+        pickupTime: "2026-04-08T10:00",
+        truckType: "Mini Truck",
+        loadType: "Electronics",
+        status: "completed",
+        amount: 8200,
+        paid: true,
+        driverPayout: 5200,
+        driverPaid: true,
+        poolMessage: "Paired with a nearby electronics run to reduce empty return distance."
+    },
+    {
+        id: "booking-2",
+        customerId: "consumer-riya",
+        driverId: "driver-2",
+        ownerId: "owner-aq",
+        truckId: "truck-201",
+        from: "Delhi Furniture Market",
+        to: "Jaipur Retail Hub",
+        pickupTime: "2026-04-09T18:30",
+        truckType: "Medium Truck",
+        loadType: "Furniture",
+        status: "pending_approval",
+        amount: 14600,
+        paid: false,
+        driverPayout: 6800,
+        driverPaid: false,
+        poolMessage: "Eligible for truck pooling with another Jaipur-bound load in the 6 PM lane."
+    }
+];
+const complaints = [
+    {
+        id: "complaint-1",
+        customerId: "consumer-riya",
+        bookingId: "booking-2",
+        title: "Need faster booking confirmation",
+        detail: "The customer wants clearer confirmation timing after submitting the request to the fleet owner.",
+        status: "open",
+        createdAt: "2026-04-08T09:15"
+    }
+];
+const defaultDemoStore = {
+    users: [
+        ...users,
+        ...driverUsers
+    ],
+    trucks,
+    drivers,
+    bookings,
+    complaints
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/EchoHorn/lib/demo-store.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "acceptBooking",
+    ()=>acceptBooking,
+    "addDriver",
+    ()=>addDriver,
+    "addTruck",
+    ()=>addTruck,
+    "createBooking",
+    ()=>createBooking,
+    "createComplaint",
+    ()=>createComplaint,
+    "loadDemoStore",
+    ()=>loadDemoStore,
+    "loginUser",
+    ()=>loginUser,
+    "markBookingCompleted",
+    ()=>markBookingCompleted,
+    "markBookingInTransit",
+    ()=>markBookingInTransit,
+    "markBookingPaid",
+    ()=>markBookingPaid,
+    "markDriverPaid",
+    ()=>markDriverPaid,
+    "rejectBooking",
+    ()=>rejectBooking,
+    "resetDemoStore",
+    ()=>resetDemoStore,
+    "saveDemoStore",
+    ()=>saveDemoStore,
+    "signUpUser",
+    ()=>signUpUser
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/EchoHorn/lib/demo-data.ts [app-client] (ecmascript)");
+'use client';
+;
+const STORAGE_KEY = 'echohorn-demo-store-v2';
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_REGEX = /^\+?[1-9]\d{9,14}$/;
+const NAME_REGEX = /^[A-Za-z][A-Za-z\s'.-]{1,48}[A-Za-z.]$/;
+const COMPANY_REGEX = /^[A-Za-z0-9][A-Za-z0-9\s&'.-]{1,58}[A-Za-z0-9.]$/;
+const REGION_REGEX = /^[A-Za-z][A-Za-z\s-]{1,38}[A-Za-z]$/;
+const REGISTRATION_REGEX = /^[A-Z0-9-]{6,15}$/;
+function generateId(prefix) {
+    return `${prefix}-${Math.random().toString(36).slice(2, 10)}`;
+}
+function normalizeEmail(email) {
+    return email.trim().toLowerCase();
+}
+function normalizePhone(phone) {
+    return phone.replace(/[\s()-]/g, '');
+}
+function requireValidName(value, label) {
+    const trimmed = value.trim();
+    if (!NAME_REGEX.test(trimmed)) {
+        throw new Error(`${label} must use real letters, not random numbers or symbols.`);
+    }
+    return trimmed.replace(/\s+/g, ' ');
+}
+function requireValidEmail(value) {
+    const normalized = normalizeEmail(value);
+    if (!EMAIL_REGEX.test(normalized)) {
+        throw new Error('Enter a valid email address.');
+    }
+    return normalized;
+}
+function requireValidPhone(value) {
+    const normalized = normalizePhone(value);
+    if (!PHONE_REGEX.test(normalized)) {
+        throw new Error('Enter a valid phone number with 10 to 15 digits.');
+    }
+    return normalized;
+}
+function requireValidRegion(value) {
+    const trimmed = value.trim();
+    if (!REGION_REGEX.test(trimmed)) {
+        throw new Error('Enter a valid region or city name.');
+    }
+    return trimmed.replace(/\s+/g, ' ');
+}
+function requireValidCompany(value) {
+    const trimmed = value.trim();
+    if (!COMPANY_REGEX.test(trimmed)) {
+        throw new Error('Enter a valid company name.');
+    }
+    return trimmed.replace(/\s+/g, ' ');
+}
+function requireStrongPassword(value) {
+    const trimmed = value.trim();
+    if (trimmed.length < 8) {
+        throw new Error('Password must be at least 8 characters.');
+    }
+    return trimmed;
+}
+function requireValidLocation(value, label) {
+    const trimmed = value.trim();
+    if (trimmed.length < 6 || !/[A-Za-z]/.test(trimmed)) {
+        throw new Error(`${label} must be a real location.`);
+    }
+    return trimmed.replace(/\s+/g, ' ');
+}
+function inferDriverPayout(driver, amount) {
+    if (driver?.fixedIncome) {
+        return driver.fixedIncome;
+    }
+    return Math.round(amount * 0.55);
+}
+function createPoolMessage(from, to, pickupTime, truckType, existingBookings) {
+    const nearbyBooking = existingBookings.find((booking)=>{
+        return booking.truckType === truckType && booking.status !== 'completed' && booking.to.toLowerCase().includes(to.trim().split(' ')[0].toLowerCase());
+    });
+    if (nearbyBooking) {
+        return `Truck pooling suggested with another ${truckType.toLowerCase()} run headed toward ${to}. Dispatch can club both loads around ${pickupTime.slice(11, 16)} to save fuel.`;
+    }
+    return `Pooling scan complete: this route from ${from} to ${to} is being watched for a nearby shared lane.`;
+}
+function sanitizeStore(store) {
+    const users = Array.isArray(store?.users) ? store.users : __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"].users;
+    const trucks = Array.isArray(store?.trucks) ? store.trucks : __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"].trucks;
+    const drivers = Array.isArray(store?.drivers) ? store.drivers : __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"].drivers;
+    const rawBookings = Array.isArray(store?.bookings) ? store.bookings : __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"].bookings;
+    const complaints = Array.isArray(store?.complaints) ? store.complaints : __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"].complaints;
+    const bookings = rawBookings.map((booking)=>{
+        const matchedDriver = drivers.find((driver)=>driver.id === booking.driverId);
+        return {
+            ...booking,
+            status: booking.status ?? 'pending_approval',
+            paid: booking.paid ?? false,
+            driverPayout: booking.driverPayout ?? inferDriverPayout(matchedDriver, booking.amount),
+            driverPaid: booking.driverPaid ?? false,
+            poolMessage: booking.poolMessage ?? createPoolMessage(booking.from, booking.to, booking.pickupTime, booking.truckType, rawBookings)
+        };
+    });
+    return {
+        users,
+        trucks,
+        drivers,
+        bookings,
+        complaints
+    };
+}
+function getDriverContext(store, driverId, truckId) {
+    const driver = store.drivers.find((item)=>item.id === driverId);
+    const truck = store.trucks.find((item)=>item.id === truckId);
+    return {
+        driver,
+        truck
+    };
+}
+function loadDemoStore() {
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) {
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"]));
+        return __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"];
+    }
+    try {
+        const parsed = sanitizeStore(JSON.parse(raw));
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+        return parsed;
+    } catch  {
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"]));
+        return __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"];
+    }
+}
+function saveDemoStore(store) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(sanitizeStore(store)));
+    }
+}
+function resetDemoStore() {
+    saveDemoStore(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"]);
+    return __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultDemoStore"];
+}
+function signUpUser(payload) {
+    const store = loadDemoStore();
+    const email = requireValidEmail(payload.email);
+    const exists = store.users.some((user)=>user.email.toLowerCase() === email);
+    if (exists) {
+        throw new Error('An account with this email already exists.');
+    }
+    const user = {
+        ...payload,
+        id: generateId(payload.role),
+        name: requireValidName(payload.name, payload.role === 'fleet_owner' ? 'Owner name' : 'Name'),
+        email,
+        password: requireStrongPassword(payload.password),
+        phone: requireValidPhone(payload.phone),
+        region: requireValidRegion(payload.region),
+        companyName: payload.companyName ? requireValidCompany(payload.companyName) : payload.companyName
+    };
+    const nextStore = {
+        ...store,
+        users: [
+            ...store.users,
+            user
+        ]
+    };
+    saveDemoStore(nextStore);
+    return {
+        user,
+        store: nextStore
+    };
+}
+function loginUser(email, password, role) {
+    const store = loadDemoStore();
+    const normalizedEmail = requireValidEmail(email);
+    const user = store.users.find((item)=>item.email.toLowerCase() === normalizedEmail && item.password === password.trim() && item.role === role);
+    if (!user) {
+        throw new Error('Invalid credentials for this role.');
+    }
+    return {
+        user,
+        store
+    };
+}
+function createBooking(payload) {
+    const store = loadDemoStore();
+    const { driver } = getDriverContext(store, payload.driverId, payload.truckId);
+    const from = requireValidLocation(payload.from, 'Pickup location');
+    const to = requireValidLocation(payload.to, 'Drop location');
+    const booking = {
+        ...payload,
+        from,
+        to,
+        id: generateId('booking'),
+        status: 'pending_approval',
+        paid: false,
+        driverPayout: inferDriverPayout(driver, payload.amount),
+        driverPaid: false,
+        poolMessage: createPoolMessage(from, to, payload.pickupTime, payload.truckType, store.bookings)
+    };
+    const nextStore = {
+        ...store,
+        bookings: [
+            booking,
+            ...store.bookings
+        ]
+    };
+    saveDemoStore(nextStore);
+    return {
+        booking,
+        store: nextStore
+    };
+}
+function acceptBooking(bookingId) {
+    const store = loadDemoStore();
+    const target = store.bookings.find((booking)=>booking.id === bookingId);
+    if (!target) {
+        return store;
+    }
+    const nextStore = {
+        ...store,
+        bookings: store.bookings.map((booking)=>booking.id === bookingId ? {
+                ...booking,
+                status: 'accepted',
+                rejectionReason: undefined
+            } : booking),
+        drivers: store.drivers.map((driver)=>driver.id === target.driverId ? {
+                ...driver,
+                available: false
+            } : driver),
+        trucks: store.trucks.map((truck)=>truck.id === target.truckId ? {
+                ...truck,
+                status: 'on_trip'
+            } : truck)
+    };
+    saveDemoStore(nextStore);
+    return nextStore;
+}
+function rejectBooking(bookingId, reason = 'Not accepted by fleet owner.') {
+    const store = loadDemoStore();
+    const target = store.bookings.find((booking)=>booking.id === bookingId);
+    if (!target) {
+        return store;
+    }
+    const nextStore = {
+        ...store,
+        bookings: store.bookings.map((booking)=>booking.id === bookingId ? {
+                ...booking,
+                status: 'rejected',
+                rejectionReason: reason.trim()
+            } : booking),
+        drivers: store.drivers.map((driver)=>driver.id === target.driverId ? {
+                ...driver,
+                available: true
+            } : driver),
+        trucks: store.trucks.map((truck)=>truck.id === target.truckId ? {
+                ...truck,
+                status: 'available'
+            } : truck)
+    };
+    saveDemoStore(nextStore);
+    return nextStore;
+}
+function addTruck(payload) {
+    const store = loadDemoStore();
+    const registrationNumber = payload.registrationNumber.trim().toUpperCase();
+    if (!REGISTRATION_REGEX.test(registrationNumber)) {
+        throw new Error('Enter a valid truck registration number.');
+    }
+    if (!Number.isFinite(payload.capacityTons) || payload.capacityTons <= 0) {
+        throw new Error('Truck capacity must be a valid positive number.');
+    }
+    const truck = {
+        ...payload,
+        registrationNumber,
+        region: requireValidRegion(payload.region),
+        id: generateId('truck'),
+        status: 'available'
+    };
+    const nextStore = {
+        ...store,
+        trucks: [
+            truck,
+            ...store.trucks
+        ]
+    };
+    saveDemoStore(nextStore);
+    return {
+        truck,
+        store: nextStore
+    };
+}
+function addDriver(payload) {
+    const store = loadDemoStore();
+    const email = requireValidEmail(payload.email);
+    const exists = store.users.some((user)=>user.email.toLowerCase() === email);
+    if (exists) {
+        throw new Error('A driver with this email already exists.');
+    }
+    const userId = generateId('driver-user');
+    const driverId = generateId('driver');
+    const user = {
+        id: userId,
+        role: 'driver',
+        name: requireValidName(payload.name, 'Driver name'),
+        email,
+        password: requireStrongPassword(payload.password),
+        phone: requireValidPhone(payload.phone),
+        region: requireValidRegion(payload.region)
+    };
+    const driver = {
+        id: driverId,
+        userId,
+        ownerId: payload.ownerId,
+        truckId: payload.truckId,
+        rating: payload.rating,
+        predictedRating: payload.predictedRating,
+        points: payload.points,
+        trips: payload.trips,
+        fixedIncome: payload.fixedIncome,
+        etaHours: payload.etaHours,
+        safetyNote: payload.safetyNote,
+        routePreference: payload.routePreference,
+        available: true
+    };
+    const nextStore = {
+        ...store,
+        users: [
+            ...store.users,
+            user
+        ],
+        drivers: [
+            ...store.drivers,
+            driver
+        ]
+    };
+    saveDemoStore(nextStore);
+    return {
+        user,
+        driver,
+        store: nextStore
+    };
+}
+function markBookingPaid(bookingId) {
+    const store = loadDemoStore();
+    const bookings = store.bookings.map((booking)=>booking.id === bookingId ? {
+            ...booking,
+            paid: true
+        } : booking);
+    const nextStore = {
+        ...store,
+        bookings
+    };
+    saveDemoStore(nextStore);
+    return nextStore;
+}
+function markBookingInTransit(bookingId) {
+    const store = loadDemoStore();
+    const target = store.bookings.find((booking)=>booking.id === bookingId);
+    if (!target) {
+        return store;
+    }
+    const nextStore = {
+        ...store,
+        bookings: store.bookings.map((booking)=>booking.id === bookingId ? {
+                ...booking,
+                status: 'in_transit'
+            } : booking),
+        drivers: store.drivers.map((driver)=>driver.id === target.driverId ? {
+                ...driver,
+                available: false
+            } : driver),
+        trucks: store.trucks.map((truck)=>truck.id === target.truckId ? {
+                ...truck,
+                status: 'on_trip'
+            } : truck)
+    };
+    saveDemoStore(nextStore);
+    return nextStore;
+}
+function markBookingCompleted(bookingId) {
+    const store = loadDemoStore();
+    const target = store.bookings.find((booking)=>booking.id === bookingId);
+    if (!target) {
+        return store;
+    }
+    const nextStore = {
+        ...store,
+        bookings: store.bookings.map((booking)=>booking.id === bookingId ? {
+                ...booking,
+                status: 'completed'
+            } : booking),
+        drivers: store.drivers.map((driver)=>driver.id === target.driverId ? {
+                ...driver,
+                available: true,
+                points: driver.points + 25,
+                trips: driver.trips + 1
+            } : driver),
+        trucks: store.trucks.map((truck)=>truck.id === target.truckId ? {
+                ...truck,
+                status: 'available'
+            } : truck)
+    };
+    saveDemoStore(nextStore);
+    return nextStore;
+}
+function markDriverPaid(bookingId) {
+    const store = loadDemoStore();
+    const nextStore = {
+        ...store,
+        bookings: store.bookings.map((booking)=>booking.id === bookingId ? {
+                ...booking,
+                driverPaid: true
+            } : booking)
+    };
+    saveDemoStore(nextStore);
+    return nextStore;
+}
+function createComplaint(payload) {
+    const store = loadDemoStore();
+    const complaint = {
+        ...payload,
+        title: payload.title.trim(),
+        detail: payload.detail.trim(),
+        id: generateId('complaint'),
+        status: 'open',
+        createdAt: new Date().toISOString()
+    };
+    const nextStore = {
+        ...store,
+        complaints: [
+            complaint,
+            ...store.complaints
+        ]
+    };
+    saveDemoStore(nextStore);
+    return {
+        complaint,
+        store: nextStore
+    };
+}
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/EchoHorn/components/driver/DriverPortal.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>DriverPortal
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/EchoHorn/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/EchoHorn/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/EchoHorn/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[next]/internal/font/google/space_grotesk_36d91787.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[next]/internal/font/google/inter_20c57e15.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/EchoHorn/node_modules/react-icons/fa6/index.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$store$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/EchoHorn/lib/demo-store.ts [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+;
+;
+;
+function formatDateTime(value) {
+    return new Date(value).toLocaleString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
+}
+function DriverPortal() {
+    _s();
+    const [mode, setMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('login');
+    const [store, setStore] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
+        "DriverPortal.useState": ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$store$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loadDemoStore"])()
+    }["DriverPortal.useState"]);
+    const [session, setSession] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
+        name: '',
+        email: '',
+        password: '',
+        phone: '',
+        region: 'Delhi NCR'
+    });
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "DriverPortal.useEffect": ()=>{
+            const sync = {
+                "DriverPortal.useEffect.sync": ()=>setStore((0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$store$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loadDemoStore"])())
+            }["DriverPortal.useEffect.sync"];
+            window.addEventListener('storage', sync);
+            return ({
+                "DriverPortal.useEffect": ()=>window.removeEventListener('storage', sync)
+            })["DriverPortal.useEffect"];
+        }
+    }["DriverPortal.useEffect"], []);
+    const driverUser = session ? store.users.find((user)=>user.id === session.id) : null;
+    const driverRecord = session ? store.drivers.find((driver)=>driver.userId === session.id) : null;
+    const truck = driverRecord ? store.trucks.find((item)=>item.id === driverRecord.truckId) : null;
+    const jobs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "DriverPortal.useMemo[jobs]": ()=>{
+            if (!driverRecord) return [];
+            return store.bookings.filter({
+                "DriverPortal.useMemo[jobs]": (booking)=>booking.driverId === driverRecord.id && booking.status !== 'pending_approval' && booking.status !== 'rejected'
+            }["DriverPortal.useMemo[jobs]"]);
+        }
+    }["DriverPortal.useMemo[jobs]"], [
+        driverRecord,
+        store.bookings
+    ]);
+    const earnings = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "DriverPortal.useMemo[earnings]": ()=>{
+            const paid = jobs.filter({
+                "DriverPortal.useMemo[earnings].paid": (job)=>job.driverPaid
+            }["DriverPortal.useMemo[earnings].paid"]).reduce({
+                "DriverPortal.useMemo[earnings].paid": (sum, job)=>sum + job.driverPayout
+            }["DriverPortal.useMemo[earnings].paid"], 0);
+            const due = jobs.filter({
+                "DriverPortal.useMemo[earnings].due": (job)=>job.status === 'completed' && job.paid && !job.driverPaid
+            }["DriverPortal.useMemo[earnings].due"]).reduce({
+                "DriverPortal.useMemo[earnings].due": (sum, job)=>sum + job.driverPayout
+            }["DriverPortal.useMemo[earnings].due"], 0);
+            const awaitingCustomer = jobs.filter({
+                "DriverPortal.useMemo[earnings].awaitingCustomer": (job)=>job.status === 'completed' && !job.paid
+            }["DriverPortal.useMemo[earnings].awaitingCustomer"]).reduce({
+                "DriverPortal.useMemo[earnings].awaitingCustomer": (sum, job)=>sum + job.driverPayout
+            }["DriverPortal.useMemo[earnings].awaitingCustomer"], 0);
+            return {
+                paid,
+                due,
+                awaitingCustomer
+            };
+        }
+    }["DriverPortal.useMemo[earnings]"], [
+        jobs
+    ]);
+    const handleAuth = ()=>{
+        try {
+            if (mode === 'signup') {
+                const { user } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$store$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["signUpUser"])({
+                    role: 'driver',
+                    name: form.name,
+                    email: form.email,
+                    password: form.password,
+                    phone: form.phone,
+                    region: form.region
+                });
+                setSession({
+                    id: user.id,
+                    name: user.name,
+                    email: user.email
+                });
+                setStore((0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$store$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loadDemoStore"])());
+                setMessage('Driver account created. Fleet owner assignment can now be added in the fleet portal.');
+            } else {
+                const { user } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$store$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loginUser"])(form.email, form.password, 'driver');
+                setSession({
+                    id: user.id,
+                    name: user.name,
+                    email: user.email
+                });
+                setStore((0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$lib$2f$demo$2d$store$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loadDemoStore"])());
+                setMessage('Logged in as driver.');
+            }
+        } catch (error) {
+            setMessage(error instanceof Error ? error.message : 'Unable to continue.');
+        }
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "relative min-h-screen overflow-hidden bg-[linear-gradient(180deg,#04140d_0%,#0b1520_52%,#0a111b_100%)] text-white",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.16),transparent_18%),radial-gradient(circle_at_78%_18%,rgba(56,189,248,0.12),transparent_20%),radial-gradient(circle_at_bottom,rgba(16,185,129,0.08),transparent_24%)]"
+            }, void 0, false, {
+                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                lineNumber: 93,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute left-[8%] top-28 h-48 w-48 rounded-full bg-emerald-400/10 blur-3xl"
+            }, void 0, false, {
+                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                lineNumber: 94,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute right-[12%] top-36 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl"
+            }, void 0, false, {
+                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                lineNumber: 95,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-16 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"
+            }, void 0, false, {
+                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                lineNumber: 96,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 opacity-[0.08]",
+                style: {
+                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)',
+                    backgroundSize: '88px 88px'
+                }
+            }, void 0, false, {
+                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                lineNumber: 97,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative min-h-screen",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "mb-8 flex items-center justify-between",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/get-started",
+                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} inline-flex items-center gap-3 text-sm text-slate-300 transition hover:text-emerald-300`,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaArrowLeft"], {
+                                            className: "h-4 w-4"
+                                        }, void 0, false, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 102,
+                                            columnNumber: 15
+                                        }, this),
+                                        "Back to roles"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                    lineNumber: 101,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} rounded-full border border-white/10 bg-slate-950/50 px-4 py-2 text-sm text-slate-200`,
+                                    children: "Driver operations and payout desk"
+                                }, void 0, false, {
+                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                    lineNumber: 105,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                            lineNumber: 100,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                            className: "grid gap-6 lg:grid-cols-[0.92fr_1.08fr]",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "rounded-[30px] border border-white/10 bg-slate-950/55 p-8 backdrop-blur",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mb-3 text-sm uppercase tracking-[0.2em] text-emerald-200/80`,
+                                            children: "Driver portal"
+                                        }, void 0, false, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 112,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                            className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-4xl font-bold leading-tight`,
+                                            children: "Drivers can track assigned trips, trip completion, dues, and payout releases in one dashboard."
+                                        }, void 0, false, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 113,
+                                            columnNumber: 15
+                                        }, this),
+                                        !session ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "mt-8 rounded-[28px] border border-white/10 bg-slate-950/70 p-6",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "mb-4 flex gap-2",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            onClick: ()=>setMode('login'),
+                                                            className: `rounded-full px-4 py-2 text-sm ${mode === 'login' ? 'bg-emerald-400 text-slate-950' : 'bg-white/5 text-slate-300'}`,
+                                                            children: "Login"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                            lineNumber: 119,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            onClick: ()=>setMode('signup'),
+                                                            className: `rounded-full px-4 py-2 text-sm ${mode === 'signup' ? 'bg-emerald-400 text-slate-950' : 'bg-white/5 text-slate-300'}`,
+                                                            children: "Sign up"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                            lineNumber: 120,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 118,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "grid gap-4",
+                                                    children: [
+                                                        mode === 'signup' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            value: form.name,
+                                                            onChange: (e)=>setForm({
+                                                                    ...form,
+                                                                    name: e.target.value
+                                                                }),
+                                                            placeholder: "Driver name",
+                                                            className: "rounded-2xl border border-white/10 bg-black/40 px-4 py-3"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                            lineNumber: 123,
+                                                            columnNumber: 43
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            value: form.email,
+                                                            onChange: (e)=>setForm({
+                                                                    ...form,
+                                                                    email: e.target.value
+                                                                }),
+                                                            placeholder: "Email",
+                                                            className: "rounded-2xl border border-white/10 bg-black/40 px-4 py-3"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                            lineNumber: 124,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            value: form.password,
+                                                            onChange: (e)=>setForm({
+                                                                    ...form,
+                                                                    password: e.target.value
+                                                                }),
+                                                            placeholder: "Password",
+                                                            type: "password",
+                                                            className: "rounded-2xl border border-white/10 bg-black/40 px-4 py-3"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                            lineNumber: 125,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        mode === 'signup' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                    value: form.phone,
+                                                                    onChange: (e)=>setForm({
+                                                                            ...form,
+                                                                            phone: e.target.value
+                                                                        }),
+                                                                    placeholder: "Phone",
+                                                                    className: "rounded-2xl border border-white/10 bg-black/40 px-4 py-3"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                    lineNumber: 128,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                                    value: form.region,
+                                                                    onChange: (e)=>setForm({
+                                                                            ...form,
+                                                                            region: e.target.value
+                                                                        }),
+                                                                    placeholder: "Region",
+                                                                    className: "rounded-2xl border border-white/10 bg-black/40 px-4 py-3"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                    lineNumber: 129,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            onClick: handleAuth,
+                                                            className: "rounded-2xl bg-emerald-400 px-4 py-3 font-semibold text-slate-950",
+                                                            children: mode === 'signup' ? 'Create driver account' : 'Log in as driver'
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                            lineNumber: 132,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 122,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 117,
+                                            columnNumber: 17
+                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "mt-8 rounded-[28px] border border-emerald-300/20 bg-emerald-400/10 p-6",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-2xl font-semibold`,
+                                                    children: [
+                                                        "Welcome, ",
+                                                        session.name
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 139,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-2 text-sm text-slate-300`,
+                                                    children: [
+                                                        session.email,
+                                                        ". Trip completions, customer payments, and driver payouts will appear here automatically."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 140,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 138,
+                                            columnNumber: 17
+                                        }, this),
+                                        message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200`,
+                                            children: message
+                                        }, void 0, false, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 146,
+                                            columnNumber: 27
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                    lineNumber: 111,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "grid gap-4 md:grid-cols-2 xl:grid-cols-4",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "rounded-[28px] border border-white/10 bg-white/[0.08] p-6 backdrop-blur",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaRankingStar"], {
+                                                    className: "mb-3 h-5 w-5 text-emerald-300"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 151,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-sm text-slate-300`,
+                                                    children: "Customer rating"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 152,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-2 text-3xl font-semibold`,
+                                                    children: driverRecord?.rating ?? '-'
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 153,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 150,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "rounded-[28px] border border-white/10 bg-white/[0.08] p-6 backdrop-blur",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaRoad"], {
+                                                    className: "mb-3 h-5 w-5 text-cyan-300"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 156,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-sm text-slate-300`,
+                                                    children: "Driver points"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 157,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-2 text-3xl font-semibold`,
+                                                    children: driverRecord?.points ?? '-'
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 158,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 155,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "rounded-[28px] border border-white/10 bg-white/[0.08] p-6 backdrop-blur",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaTruck"], {
+                                                    className: "mb-3 h-5 w-5 text-emerald-300"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 161,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-sm text-slate-300`,
+                                                    children: "Assigned truck"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 162,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-2 text-xl font-semibold`,
+                                                    children: truck?.registrationNumber ?? 'Unassigned'
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 163,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 160,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "rounded-[28px] border border-white/10 bg-white/[0.08] p-6 backdrop-blur",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaWallet"], {
+                                                    className: "mb-3 h-5 w-5 text-amber-300"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 166,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-sm text-slate-300`,
+                                                    children: "Due payout"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 167,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-2 text-3xl font-semibold`,
+                                                    children: [
+                                                        "Rs. ",
+                                                        earnings.due.toLocaleString()
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 168,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 165,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                    lineNumber: 149,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                            lineNumber: 110,
+                            columnNumber: 11
+                        }, this),
+                        session && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                            className: "mt-8 grid gap-6 xl:grid-cols-[0.82fr_1.18fr]",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "rounded-[30px] border border-white/10 bg-slate-950/55 p-8 backdrop-blur",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-3",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$react$2d$icons$2f$fa6$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaIdCard"], {
+                                                    className: "h-5 w-5 text-emerald-300"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 177,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-3xl font-semibold`,
+                                                    children: "Driver profile"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 178,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 176,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-6 space-y-4 text-sm text-slate-300`,
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "rounded-2xl border border-white/10 bg-slate-950/50 p-4",
+                                                    children: [
+                                                        "Region: ",
+                                                        driverUser?.region ?? 'Unknown'
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 181,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "rounded-2xl border border-white/10 bg-slate-950/50 p-4",
+                                                    children: [
+                                                        "Route preference: ",
+                                                        driverRecord?.routePreference ?? 'Not assigned'
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 182,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "rounded-2xl border border-white/10 bg-slate-950/50 p-4",
+                                                    children: [
+                                                        "Fixed income per trip: Rs. ",
+                                                        driverRecord?.fixedIncome?.toLocaleString() ?? '0'
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 183,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "rounded-2xl border border-white/10 bg-slate-950/50 p-4",
+                                                    children: [
+                                                        "Paid out so far: Rs. ",
+                                                        earnings.paid.toLocaleString()
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 184,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "rounded-2xl border border-white/10 bg-slate-950/50 p-4",
+                                                    children: [
+                                                        "Completed but awaiting customer clearance: Rs. ",
+                                                        earnings.awaitingCustomer.toLocaleString()
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 185,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "rounded-2xl border border-white/10 bg-slate-950/50 p-4",
+                                                    children: driverRecord?.safetyNote ?? 'No safety note yet.'
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 186,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 180,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                    lineNumber: 175,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "rounded-[30px] border border-white/10 bg-slate-950/70 p-8",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-3xl font-semibold`,
+                                            children: "Assigned jobs and payouts"
+                                        }, void 0, false, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 191,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "mt-6 space-y-4",
+                                            children: [
+                                                jobs.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-300`,
+                                                    children: "No jobs assigned to this driver in the current demo store."
+                                                }, void 0, false, {
+                                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                    lineNumber: 194,
+                                                    columnNumber: 21
+                                                }, this),
+                                                jobs.map((job)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "rounded-3xl border border-white/10 bg-white/5 p-5",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$space_grotesk_36d91787$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} text-xl font-semibold`,
+                                                                                children: [
+                                                                                    job.from,
+                                                                                    " to ",
+                                                                                    job.to
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                                lineNumber: 202,
+                                                                                columnNumber: 27
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-2 text-sm text-slate-300`,
+                                                                                children: [
+                                                                                    job.truckType,
+                                                                                    " • ",
+                                                                                    job.loadType,
+                                                                                    " • ",
+                                                                                    formatDateTime(job.pickupTime)
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                                lineNumber: 203,
+                                                                                columnNumber: 27
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                        lineNumber: 201,
+                                                                        columnNumber: 25
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} flex flex-wrap gap-2 text-sm`,
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: `rounded-full px-3 py-1 ${job.status === 'completed' ? 'bg-emerald-400/10 text-emerald-100' : job.status === 'in_transit' ? 'bg-violet-400/10 text-violet-100' : 'bg-sky-400/10 text-sky-100'}`,
+                                                                                children: job.status.replace('_', ' ')
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                                lineNumber: 208,
+                                                                                columnNumber: 27
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: `rounded-full px-3 py-1 ${job.paid ? 'bg-cyan-400/10 text-cyan-100' : 'bg-rose-400/10 text-rose-100'}`,
+                                                                                children: job.paid ? 'Customer cleared' : 'Waiting for customer payment'
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                                lineNumber: 211,
+                                                                                columnNumber: 27
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: `rounded-full px-3 py-1 ${job.driverPaid ? 'bg-emerald-400/10 text-emerald-100' : 'bg-amber-400/10 text-amber-100'}`,
+                                                                                children: job.driverPaid ? 'Payout sent' : 'Payout pending'
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                                lineNumber: 214,
+                                                                                columnNumber: 27
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                        lineNumber: 207,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                lineNumber: 200,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: `${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_20c57e15$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].className} mt-4 grid gap-3 text-sm text-slate-200 md:grid-cols-2`,
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "rounded-2xl border border-white/10 bg-black/30 p-4",
+                                                                        children: [
+                                                                            "Driver income for this job: Rs. ",
+                                                                            job.driverPayout.toLocaleString()
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                        lineNumber: 220,
+                                                                        columnNumber: 25
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "rounded-2xl border border-white/10 bg-black/30 p-4",
+                                                                        children: job.poolMessage ?? 'No pooling note for this lane.'
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                        lineNumber: 221,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                                lineNumber: 219,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, job.id, true, {
+                                                        fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                                        lineNumber: 199,
+                                                        columnNumber: 21
+                                                    }, this))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                            lineNumber: 192,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                                    lineNumber: 190,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                            lineNumber: 174,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                    lineNumber: 99,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+                lineNumber: 98,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/EchoHorn/components/driver/DriverPortal.tsx",
+        lineNumber: 92,
+        columnNumber: 5
+    }, this);
+}
+_s(DriverPortal, "9niWyNAn6Ve9SAbpyHDz4OWP61U=");
+_c = DriverPortal;
+var _c;
+__turbopack_context__.k.register(_c, "DriverPortal");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/EchoHorn/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    assign: null,
+    searchParamsToUrlQuery: null,
+    urlQueryToSearchParams: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    assign: function() {
+        return assign;
+    },
+    searchParamsToUrlQuery: function() {
+        return searchParamsToUrlQuery;
+    },
+    urlQueryToSearchParams: function() {
+        return urlQueryToSearchParams;
+    }
+});
+function searchParamsToUrlQuery(searchParams) {
+    const query = {};
+    for (const [key, value] of searchParams.entries()){
+        const existing = query[key];
+        if (typeof existing === 'undefined') {
+            query[key] = value;
+        } else if (Array.isArray(existing)) {
+            existing.push(value);
+        } else {
+            query[key] = [
+                existing,
+                value
+            ];
+        }
+    }
+    return query;
+}
+function stringifyUrlQueryParam(param) {
+    if (typeof param === 'string') {
+        return param;
+    }
+    if (typeof param === 'number' && !isNaN(param) || typeof param === 'boolean') {
+        return String(param);
+    } else {
+        return '';
+    }
+}
+function urlQueryToSearchParams(query) {
+    const searchParams = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)){
+        if (Array.isArray(value)) {
+            for (const item of value){
+                searchParams.append(key, stringifyUrlQueryParam(item));
+            }
+        } else {
+            searchParams.set(key, stringifyUrlQueryParam(value));
+        }
+    }
+    return searchParams;
+}
+function assign(target, ...searchParamsList) {
+    for (const searchParams of searchParamsList){
+        for (const key of searchParams.keys()){
+            target.delete(key);
+        }
+        for (const [key, value] of searchParams.entries()){
+            target.append(key, value);
+        }
+    }
+    return target;
+} //# sourceMappingURL=querystring.js.map
+}),
+"[project]/EchoHorn/node_modules/next/dist/shared/lib/router/utils/format-url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Format function modified from nodejs
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/EchoHorn/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    formatUrl: null,
+    formatWithValidation: null,
+    urlObjectKeys: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    formatUrl: function() {
+        return formatUrl;
+    },
+    formatWithValidation: function() {
+        return formatWithValidation;
+    },
+    urlObjectKeys: function() {
+        return urlObjectKeys;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/EchoHorn/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _querystring = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-client] (ecmascript)"));
+const slashedProtocols = /https?|ftp|gopher|file/;
+function formatUrl(urlObj) {
+    let { auth, hostname } = urlObj;
+    let protocol = urlObj.protocol || '';
+    let pathname = urlObj.pathname || '';
+    let hash = urlObj.hash || '';
+    let query = urlObj.query || '';
+    let host = false;
+    auth = auth ? encodeURIComponent(auth).replace(/%3A/i, ':') + '@' : '';
+    if (urlObj.host) {
+        host = auth + urlObj.host;
+    } else if (hostname) {
+        host = auth + (~hostname.indexOf(':') ? `[${hostname}]` : hostname);
+        if (urlObj.port) {
+            host += ':' + urlObj.port;
+        }
+    }
+    if (query && typeof query === 'object') {
+        query = String(_querystring.urlQueryToSearchParams(query));
+    }
+    let search = urlObj.search || query && `?${query}` || '';
+    if (protocol && !protocol.endsWith(':')) protocol += ':';
+    if (urlObj.slashes || (!protocol || slashedProtocols.test(protocol)) && host !== false) {
+        host = '//' + (host || '');
+        if (pathname && pathname[0] !== '/') pathname = '/' + pathname;
+    } else if (!host) {
+        host = '';
+    }
+    if (hash && hash[0] !== '#') hash = '#' + hash;
+    if (search && search[0] !== '?') search = '?' + search;
+    pathname = pathname.replace(/[?#]/g, encodeURIComponent);
+    search = search.replace('#', '%23');
+    return `${protocol}${host}${pathname}${search}${hash}`;
+}
+const urlObjectKeys = [
+    'auth',
+    'hash',
+    'host',
+    'hostname',
+    'href',
+    'path',
+    'pathname',
+    'port',
+    'protocol',
+    'query',
+    'search',
+    'slashes'
+];
+function formatWithValidation(url) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (url !== null && typeof url === 'object') {
+            Object.keys(url).forEach((key)=>{
+                if (!urlObjectKeys.includes(key)) {
+                    console.warn(`Unknown key passed via urlObject into url.format: ${key}`);
+                }
+            });
+        }
+    }
+    return formatUrl(url);
+} //# sourceMappingURL=format-url.js.map
+}),
+"[project]/EchoHorn/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "useMergedRef", {
+    enumerable: true,
+    get: function() {
+        return useMergedRef;
+    }
+});
+const _react = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+function useMergedRef(refA, refB) {
+    const cleanupA = (0, _react.useRef)(null);
+    const cleanupB = (0, _react.useRef)(null);
+    // NOTE: In theory, we could skip the wrapping if only one of the refs is non-null.
+    // (this happens often if the user doesn't pass a ref to Link/Form/Image)
+    // But this can cause us to leak a cleanup-ref into user code (previously via `<Link legacyBehavior>`),
+    // and the user might pass that ref into ref-merging library that doesn't support cleanup refs
+    // (because it hasn't been updated for React 19)
+    // which can then cause things to blow up, because a cleanup-returning ref gets called with `null`.
+    // So in practice, it's safer to be defensive and always wrap the ref, even on React 19.
+    return (0, _react.useCallback)((current)=>{
+        if (current === null) {
+            const cleanupFnA = cleanupA.current;
+            if (cleanupFnA) {
+                cleanupA.current = null;
+                cleanupFnA();
+            }
+            const cleanupFnB = cleanupB.current;
+            if (cleanupFnB) {
+                cleanupB.current = null;
+                cleanupFnB();
+            }
+        } else {
+            if (refA) {
+                cleanupA.current = applyRef(refA, current);
+            }
+            if (refB) {
+                cleanupB.current = applyRef(refB, current);
+            }
+        }
+    }, [
+        refA,
+        refB
+    ]);
+}
+function applyRef(refA, current) {
+    if (typeof refA === 'function') {
+        const cleanup = refA(current);
+        if (typeof cleanup === 'function') {
+            return cleanup;
+        } else {
+            return ()=>refA(null);
+        }
+    } else {
+        refA.current = current;
+        return ()=>{
+            refA.current = null;
+        };
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=use-merged-ref.js.map
+}),
+"[project]/EchoHorn/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/EchoHorn/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    DecodeError: null,
+    MiddlewareNotFoundError: null,
+    MissingStaticPage: null,
+    NormalizeError: null,
+    PageNotFoundError: null,
+    SP: null,
+    ST: null,
+    WEB_VITALS: null,
+    execOnce: null,
+    getDisplayName: null,
+    getLocationOrigin: null,
+    getURL: null,
+    isAbsoluteUrl: null,
+    isResSent: null,
+    loadGetInitialProps: null,
+    normalizeRepeatedSlashes: null,
+    stringifyError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    DecodeError: function() {
+        return DecodeError;
+    },
+    MiddlewareNotFoundError: function() {
+        return MiddlewareNotFoundError;
+    },
+    MissingStaticPage: function() {
+        return MissingStaticPage;
+    },
+    NormalizeError: function() {
+        return NormalizeError;
+    },
+    PageNotFoundError: function() {
+        return PageNotFoundError;
+    },
+    SP: function() {
+        return SP;
+    },
+    ST: function() {
+        return ST;
+    },
+    WEB_VITALS: function() {
+        return WEB_VITALS;
+    },
+    execOnce: function() {
+        return execOnce;
+    },
+    getDisplayName: function() {
+        return getDisplayName;
+    },
+    getLocationOrigin: function() {
+        return getLocationOrigin;
+    },
+    getURL: function() {
+        return getURL;
+    },
+    isAbsoluteUrl: function() {
+        return isAbsoluteUrl;
+    },
+    isResSent: function() {
+        return isResSent;
+    },
+    loadGetInitialProps: function() {
+        return loadGetInitialProps;
+    },
+    normalizeRepeatedSlashes: function() {
+        return normalizeRepeatedSlashes;
+    },
+    stringifyError: function() {
+        return stringifyError;
+    }
+});
+const WEB_VITALS = [
+    'CLS',
+    'FCP',
+    'FID',
+    'INP',
+    'LCP',
+    'TTFB'
+];
+function execOnce(fn) {
+    let used = false;
+    let result;
+    return (...args)=>{
+        if (!used) {
+            used = true;
+            result = fn(...args);
+        }
+        return result;
+    };
+}
+// Scheme: https://tools.ietf.org/html/rfc3986#section-3.1
+// Absolute URL: https://tools.ietf.org/html/rfc3986#section-4.3
+const ABSOLUTE_URL_REGEX = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/;
+const isAbsoluteUrl = (url)=>ABSOLUTE_URL_REGEX.test(url);
+function getLocationOrigin() {
+    const { protocol, hostname, port } = window.location;
+    return `${protocol}//${hostname}${port ? ':' + port : ''}`;
+}
+function getURL() {
+    const { href } = window.location;
+    const origin = getLocationOrigin();
+    return href.substring(origin.length);
+}
+function getDisplayName(Component) {
+    return typeof Component === 'string' ? Component : Component.displayName || Component.name || 'Unknown';
+}
+function isResSent(res) {
+    return res.finished || res.headersSent;
+}
+function normalizeRepeatedSlashes(url) {
+    const urlParts = url.split('?');
+    const urlNoQuery = urlParts[0];
+    return urlNoQuery // first we replace any non-encoded backslashes with forward
+    // then normalize repeated forward slashes
+    .replace(/\\/g, '/').replace(/\/\/+/g, '/') + (urlParts[1] ? `?${urlParts.slice(1).join('?')}` : '');
+}
+async function loadGetInitialProps(App, ctx) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (App.prototype?.getInitialProps) {
+            const message = `"${getDisplayName(App)}.getInitialProps()" is defined as an instance method - visit https://nextjs.org/docs/messages/get-initial-props-as-an-instance-method for more information.`;
+            throw Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+                value: "E394",
+                enumerable: false,
+                configurable: true
+            });
+        }
+    }
+    // when called from _app `ctx` is nested in `ctx`
+    const res = ctx.res || ctx.ctx && ctx.ctx.res;
+    if (!App.getInitialProps) {
+        if (ctx.ctx && ctx.Component) {
+            // @ts-ignore pageProps default
+            return {
+                pageProps: await loadGetInitialProps(ctx.Component, ctx.ctx)
+            };
+        }
+        return {};
+    }
+    const props = await App.getInitialProps(ctx);
+    if (res && isResSent(res)) {
+        return props;
+    }
+    if (!props) {
+        const message = `"${getDisplayName(App)}.getInitialProps()" should resolve to an object. But found "${props}" instead.`;
+        throw Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+            value: "E394",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (Object.keys(props).length === 0 && !ctx.ctx) {
+            console.warn(`${getDisplayName(App)} returned an empty object from \`getInitialProps\`. This de-optimizes and prevents automatic static optimization. https://nextjs.org/docs/messages/empty-object-getInitialProps`);
+        }
+    }
+    return props;
+}
+const SP = typeof performance !== 'undefined';
+const ST = SP && [
+    'mark',
+    'measure',
+    'getEntriesByName'
+].every((method)=>typeof performance[method] === 'function');
+class DecodeError extends Error {
+}
+class NormalizeError extends Error {
+}
+class PageNotFoundError extends Error {
+    constructor(page){
+        super();
+        this.code = 'ENOENT';
+        this.name = 'PageNotFoundError';
+        this.message = `Cannot find module for page: ${page}`;
+    }
+}
+class MissingStaticPage extends Error {
+    constructor(page, message){
+        super();
+        this.message = `Failed to load static file for page: ${page} ${message}`;
+    }
+}
+class MiddlewareNotFoundError extends Error {
+    constructor(){
+        super();
+        this.code = 'ENOENT';
+        this.message = `Cannot find the middleware module`;
+    }
+}
+function stringifyError(error) {
+    return JSON.stringify({
+        message: error.message,
+        stack: error.stack
+    });
+} //# sourceMappingURL=utils.js.map
+}),
+"[project]/EchoHorn/node_modules/next/dist/shared/lib/router/utils/is-local-url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "isLocalURL", {
+    enumerable: true,
+    get: function() {
+        return isLocalURL;
+    }
+});
+const _utils = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)");
+const _hasbasepath = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/client/has-base-path.js [app-client] (ecmascript)");
+function isLocalURL(url) {
+    // prevent a hydration mismatch on href for url with anchor refs
+    if (!(0, _utils.isAbsoluteUrl)(url)) return true;
+    try {
+        // absolute urls can be local if they are on the same origin
+        const locationOrigin = (0, _utils.getLocationOrigin)();
+        const resolved = new URL(url, locationOrigin);
+        return resolved.origin === locationOrigin && (0, _hasbasepath.hasBasePath)(resolved.pathname);
+    } catch (_) {
+        return false;
+    }
+} //# sourceMappingURL=is-local-url.js.map
+}),
+"[project]/EchoHorn/node_modules/next/dist/shared/lib/utils/error-once.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/EchoHorn/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "errorOnce", {
+    enumerable: true,
+    get: function() {
+        return errorOnce;
+    }
+});
+let errorOnce = (_)=>{};
+if ("TURBOPACK compile-time truthy", 1) {
+    const errors = new Set();
+    errorOnce = (msg)=>{
+        if (!errors.has(msg)) {
+            console.error(msg);
+        }
+        errors.add(msg);
+    };
+} //# sourceMappingURL=error-once.js.map
+}),
+"[project]/EchoHorn/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$EchoHorn$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/EchoHorn/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use client';
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    default: null,
+    useLinkStatus: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    /**
+ * A React component that extends the HTML `<a>` element to provide
+ * [prefetching](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#2-prefetching)
+ * and client-side navigation. This is the primary way to navigate between routes in Next.js.
+ *
+ * @remarks
+ * - Prefetching is only enabled in production.
+ *
+ * @see https://nextjs.org/docs/app/api-reference/components/link
+ */ default: function() {
+        return LinkComponent;
+    },
+    useLinkStatus: function() {
+        return useLinkStatus;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/EchoHorn/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _formaturl = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/shared/lib/router/utils/format-url.js [app-client] (ecmascript)");
+const _approutercontextsharedruntime = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js [app-client] (ecmascript)");
+const _usemergedref = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)");
+const _utils = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)");
+const _addbasepath = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/client/add-base-path.js [app-client] (ecmascript)");
+const _warnonce = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
+const _links = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/client/components/links.js [app-client] (ecmascript)");
+const _islocalurl = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/shared/lib/router/utils/is-local-url.js [app-client] (ecmascript)");
+const _types = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/client/components/segment-cache/types.js [app-client] (ecmascript)");
+const _erroronce = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/shared/lib/utils/error-once.js [app-client] (ecmascript)");
+function isModifiedEvent(event) {
+    const eventTarget = event.currentTarget;
+    const target = eventTarget.getAttribute('target');
+    return target && target !== '_self' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || // triggers resource download
+    event.nativeEvent && event.nativeEvent.which === 2;
+}
+function linkClicked(e, href, as, linkInstanceRef, replace, scroll, onNavigate) {
+    if (typeof window !== 'undefined') {
+        const { nodeName } = e.currentTarget;
+        // anchors inside an svg have a lowercase nodeName
+        const isAnchorNodeName = nodeName.toUpperCase() === 'A';
+        if (isAnchorNodeName && isModifiedEvent(e) || e.currentTarget.hasAttribute('download')) {
+            // ignore click for browser’s default behavior
+            return;
+        }
+        if (!(0, _islocalurl.isLocalURL)(href)) {
+            if (replace) {
+                // browser default behavior does not replace the history state
+                // so we need to do it manually
+                e.preventDefault();
+                location.replace(href);
+            }
+            // ignore click for browser’s default behavior
+            return;
+        }
+        e.preventDefault();
+        if (onNavigate) {
+            let isDefaultPrevented = false;
+            onNavigate({
+                preventDefault: ()=>{
+                    isDefaultPrevented = true;
+                }
+            });
+            if (isDefaultPrevented) {
+                return;
+            }
+        }
+        const { dispatchNavigateAction } = __turbopack_context__.r("[project]/EchoHorn/node_modules/next/dist/client/components/app-router-instance.js [app-client] (ecmascript)");
+        _react.default.startTransition(()=>{
+            dispatchNavigateAction(as || href, replace ? 'replace' : 'push', scroll ?? true, linkInstanceRef.current);
+        });
+    }
+}
+function formatStringOrUrl(urlObjOrString) {
+    if (typeof urlObjOrString === 'string') {
+        return urlObjOrString;
+    }
+    return (0, _formaturl.formatUrl)(urlObjOrString);
+}
+function LinkComponent(props) {
+    const [linkStatus, setOptimisticLinkStatus] = (0, _react.useOptimistic)(_links.IDLE_LINK_STATUS);
+    let children;
+    const linkInstanceRef = (0, _react.useRef)(null);
+    const { href: hrefProp, as: asProp, children: childrenProp, prefetch: prefetchProp = null, passHref, replace, shallow, scroll, onClick, onMouseEnter: onMouseEnterProp, onTouchStart: onTouchStartProp, legacyBehavior = false, onNavigate, ref: forwardedRef, unstable_dynamicOnHover, ...restProps } = props;
+    children = childrenProp;
+    if (legacyBehavior && (typeof children === 'string' || typeof children === 'number')) {
+        children = /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+            children: children
+        });
+    }
+    const router = _react.default.useContext(_approutercontextsharedruntime.AppRouterContext);
+    const prefetchEnabled = prefetchProp !== false;
+    const fetchStrategy = prefetchProp !== false ? getFetchStrategyFromPrefetchProp(prefetchProp) : _types.FetchStrategy.PPR;
+    if ("TURBOPACK compile-time truthy", 1) {
+        function createPropError(args) {
+            return Object.defineProperty(new Error(`Failed prop type: The prop \`${args.key}\` expects a ${args.expected} in \`<Link>\`, but got \`${args.actual}\` instead.` + (typeof window !== 'undefined' ? "\nOpen your browser's console to view the Component stack trace." : '')), "__NEXT_ERROR_CODE", {
+                value: "E319",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        // TypeScript trick for type-guarding:
+        const requiredPropsGuard = {
+            href: true
+        };
+        const requiredProps = Object.keys(requiredPropsGuard);
+        requiredProps.forEach((key)=>{
+            if (key === 'href') {
+                if (props[key] == null || typeof props[key] !== 'string' && typeof props[key] !== 'object') {
+                    throw createPropError({
+                        key,
+                        expected: '`string` or `object`',
+                        actual: props[key] === null ? 'null' : typeof props[key]
+                    });
+                }
+            } else {
+                // TypeScript trick for type-guarding:
+                const _ = key;
+            }
+        });
+        // TypeScript trick for type-guarding:
+        const optionalPropsGuard = {
+            as: true,
+            replace: true,
+            scroll: true,
+            shallow: true,
+            passHref: true,
+            prefetch: true,
+            unstable_dynamicOnHover: true,
+            onClick: true,
+            onMouseEnter: true,
+            onTouchStart: true,
+            legacyBehavior: true,
+            onNavigate: true
+        };
+        const optionalProps = Object.keys(optionalPropsGuard);
+        optionalProps.forEach((key)=>{
+            const valType = typeof props[key];
+            if (key === 'as') {
+                if (props[key] && valType !== 'string' && valType !== 'object') {
+                    throw createPropError({
+                        key,
+                        expected: '`string` or `object`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'onClick' || key === 'onMouseEnter' || key === 'onTouchStart' || key === 'onNavigate') {
+                if (props[key] && valType !== 'function') {
+                    throw createPropError({
+                        key,
+                        expected: '`function`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'replace' || key === 'scroll' || key === 'shallow' || key === 'passHref' || key === 'legacyBehavior' || key === 'unstable_dynamicOnHover') {
+                if (props[key] != null && valType !== 'boolean') {
+                    throw createPropError({
+                        key,
+                        expected: '`boolean`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'prefetch') {
+                if (props[key] != null && valType !== 'boolean' && props[key] !== 'auto') {
+                    throw createPropError({
+                        key,
+                        expected: '`boolean | "auto"`',
+                        actual: valType
+                    });
+                }
+            } else {
+                // TypeScript trick for type-guarding:
+                const _ = key;
+            }
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (props.locale) {
+            (0, _warnonce.warnOnce)('The `locale` prop is not supported in `next/link` while using the `app` router. Read more about app router internalization: https://nextjs.org/docs/app/building-your-application/routing/internationalization');
+        }
+        if (!asProp) {
+            let href;
+            if (typeof hrefProp === 'string') {
+                href = hrefProp;
+            } else if (typeof hrefProp === 'object' && typeof hrefProp.pathname === 'string') {
+                href = hrefProp.pathname;
+            }
+            if (href) {
+                const hasDynamicSegment = href.split('/').some((segment)=>segment.startsWith('[') && segment.endsWith(']'));
+                if (hasDynamicSegment) {
+                    throw Object.defineProperty(new Error(`Dynamic href \`${href}\` found in <Link> while using the \`/app\` router, this is not supported. Read more: https://nextjs.org/docs/messages/app-dir-dynamic-href`), "__NEXT_ERROR_CODE", {
+                        value: "E267",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+        }
+    }
+    const { href, as } = _react.default.useMemo({
+        "LinkComponent.useMemo": ()=>{
+            const resolvedHref = formatStringOrUrl(hrefProp);
+            return {
+                href: resolvedHref,
+                as: asProp ? formatStringOrUrl(asProp) : resolvedHref
+            };
+        }
+    }["LinkComponent.useMemo"], [
+        hrefProp,
+        asProp
+    ]);
+    // This will return the first child, if multiple are provided it will throw an error
+    let child;
+    if (legacyBehavior) {
+        if (children?.$$typeof === Symbol.for('react.lazy')) {
+            throw Object.defineProperty(new Error(`\`<Link legacyBehavior>\` received a direct child that is either a Server Component, or JSX that was loaded with React.lazy(). This is not supported. Either remove legacyBehavior, or make the direct child a Client Component that renders the Link's \`<a>\` tag.`), "__NEXT_ERROR_CODE", {
+                value: "E863",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        if ("TURBOPACK compile-time truthy", 1) {
+            if (onClick) {
+                console.warn(`"onClick" was passed to <Link> with \`href\` of \`${hrefProp}\` but "legacyBehavior" was set. The legacy behavior requires onClick be set on the child of next/link`);
+            }
+            if (onMouseEnterProp) {
+                console.warn(`"onMouseEnter" was passed to <Link> with \`href\` of \`${hrefProp}\` but "legacyBehavior" was set. The legacy behavior requires onMouseEnter be set on the child of next/link`);
+            }
+            try {
+                child = _react.default.Children.only(children);
+            } catch (err) {
+                if (!children) {
+                    throw Object.defineProperty(new Error(`No children were passed to <Link> with \`href\` of \`${hrefProp}\` but one child is required https://nextjs.org/docs/messages/link-no-children`), "__NEXT_ERROR_CODE", {
+                        value: "E320",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                throw Object.defineProperty(new Error(`Multiple children were passed to <Link> with \`href\` of \`${hrefProp}\` but only one child is supported https://nextjs.org/docs/messages/link-multiple-children` + (typeof window !== 'undefined' ? " \nOpen your browser's console to view the Component stack trace." : '')), "__NEXT_ERROR_CODE", {
+                    value: "E266",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        } else //TURBOPACK unreachable
+        ;
+    } else {
+        if ("TURBOPACK compile-time truthy", 1) {
+            if (children?.type === 'a') {
+                throw Object.defineProperty(new Error('Invalid <Link> with <a> child. Please remove <a> or use <Link legacyBehavior>.\nLearn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor'), "__NEXT_ERROR_CODE", {
+                    value: "E209",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        }
+    }
+    const childRef = legacyBehavior ? child && typeof child === 'object' && child.ref : forwardedRef;
+    // Use a callback ref to attach an IntersectionObserver to the anchor tag on
+    // mount. In the future we will also use this to keep track of all the
+    // currently mounted <Link> instances, e.g. so we can re-prefetch them after
+    // a revalidation or refresh.
+    const observeLinkVisibilityOnMount = _react.default.useCallback({
+        "LinkComponent.useCallback[observeLinkVisibilityOnMount]": (element)=>{
+            if (router !== null) {
+                linkInstanceRef.current = (0, _links.mountLinkInstance)(element, href, router, fetchStrategy, prefetchEnabled, setOptimisticLinkStatus);
+            }
+            return ({
+                "LinkComponent.useCallback[observeLinkVisibilityOnMount]": ()=>{
+                    if (linkInstanceRef.current) {
+                        (0, _links.unmountLinkForCurrentNavigation)(linkInstanceRef.current);
+                        linkInstanceRef.current = null;
+                    }
+                    (0, _links.unmountPrefetchableInstance)(element);
+                }
+            })["LinkComponent.useCallback[observeLinkVisibilityOnMount]"];
+        }
+    }["LinkComponent.useCallback[observeLinkVisibilityOnMount]"], [
+        prefetchEnabled,
+        href,
+        router,
+        fetchStrategy,
+        setOptimisticLinkStatus
+    ]);
+    const mergedRef = (0, _usemergedref.useMergedRef)(observeLinkVisibilityOnMount, childRef);
+    const childProps = {
+        ref: mergedRef,
+        onClick (e) {
+            if ("TURBOPACK compile-time truthy", 1) {
+                if (!e) {
+                    throw Object.defineProperty(new Error(`Component rendered inside next/link has to pass click event to "onClick" prop.`), "__NEXT_ERROR_CODE", {
+                        value: "E312",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+            if (!legacyBehavior && typeof onClick === 'function') {
+                onClick(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onClick === 'function') {
+                child.props.onClick(e);
+            }
+            if (!router) {
+                return;
+            }
+            if (e.defaultPrevented) {
+                return;
+            }
+            linkClicked(e, href, as, linkInstanceRef, replace, scroll, onNavigate);
+        },
+        onMouseEnter (e) {
+            if (!legacyBehavior && typeof onMouseEnterProp === 'function') {
+                onMouseEnterProp(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onMouseEnter === 'function') {
+                child.props.onMouseEnter(e);
+            }
+            if (!router) {
+                return;
+            }
+            if ("TURBOPACK compile-time truthy", 1) {
+                return;
+            }
+            //TURBOPACK unreachable
+            ;
+            const upgradeToDynamicPrefetch = undefined;
+        },
+        onTouchStart: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : function onTouchStart(e) {
+            if (!legacyBehavior && typeof onTouchStartProp === 'function') {
+                onTouchStartProp(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onTouchStart === 'function') {
+                child.props.onTouchStart(e);
+            }
+            if (!router) {
+                return;
+            }
+            if (!prefetchEnabled) {
+                return;
+            }
+            const upgradeToDynamicPrefetch = unstable_dynamicOnHover === true;
+            (0, _links.onNavigationIntent)(e.currentTarget, upgradeToDynamicPrefetch);
+        }
+    };
+    // If the url is absolute, we can bypass the logic to prepend the basePath.
+    if ((0, _utils.isAbsoluteUrl)(as)) {
+        childProps.href = as;
+    } else if (!legacyBehavior || passHref || child.type === 'a' && !('href' in child.props)) {
+        childProps.href = (0, _addbasepath.addBasePath)(as);
+    }
+    let link;
+    if (legacyBehavior) {
+        if ("TURBOPACK compile-time truthy", 1) {
+            (0, _erroronce.errorOnce)('`legacyBehavior` is deprecated and will be removed in a future ' + 'release. A codemod is available to upgrade your components:\n\n' + 'npx @next/codemod@latest new-link .\n\n' + 'Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components');
+        }
+        link = /*#__PURE__*/ _react.default.cloneElement(child, childProps);
+    } else {
+        link = /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+            ...restProps,
+            ...childProps,
+            children: children
+        });
+    }
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)(LinkStatusContext.Provider, {
+        value: linkStatus,
+        children: link
+    });
+}
+const LinkStatusContext = /*#__PURE__*/ (0, _react.createContext)(_links.IDLE_LINK_STATUS);
+const useLinkStatus = ()=>{
+    return (0, _react.useContext)(LinkStatusContext);
+};
+function getFetchStrategyFromPrefetchProp(prefetchProp) {
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    else {
+        return prefetchProp === null || prefetchProp === 'auto' ? _types.FetchStrategy.PPR : // (although invalid values should've been filtered out by prop validation in dev)
+        _types.FetchStrategy.Full;
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=link.js.map
+}),
+]);
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__1a01c5e3._.js.map

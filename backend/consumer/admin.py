@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ServiceRequest, Booking, Rating
+from .models import ServiceRequest, Booking, Complaint, Rating
 
 @admin.register(ServiceRequest)
 class ServiceRequestAdmin(admin.ModelAdmin):
@@ -18,3 +18,10 @@ class RatingAdmin(admin.ModelAdmin):
     list_display = ['booking', 'rated_by', 'rated_user', 'rating', 'created_at']
     list_filter = ['rating']
     search_fields = ['rated_by__email', 'rated_user__email']
+
+
+@admin.register(Complaint)
+class ComplaintAdmin(admin.ModelAdmin):
+    list_display = ['id', 'customer', 'booking', 'title', 'status', 'created_at']
+    list_filter = ['status', 'created_at']
+    search_fields = ['customer__email', 'title', 'detail']

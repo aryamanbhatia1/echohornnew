@@ -3,7 +3,7 @@ from .views import (
     VehicleListCreateView, VehicleDetailView,
     DriverListView, DriverDetailView,
     AddFleetDriverView, RegisterAsIndependentDriverView,
-    AssignDriverToVehicleView, DriverVehicleAssignmentListView
+    AssignDriverToVehicleView, BookingDecisionView, ContractorBookingListView, DriverVehicleAssignmentListView
 )
 
 urlpatterns = [
@@ -20,4 +20,6 @@ urlpatterns = [
     # Driver-Vehicle assignment
     path('assignments/', DriverVehicleAssignmentListView.as_view(), name='assignment_list'),
     path('assign-driver/', AssignDriverToVehicleView.as_view(), name='assign_driver'),
+    path('bookings/', ContractorBookingListView.as_view(), name='contractor_booking_list'),
+    path('bookings/<int:booking_id>/decision/', BookingDecisionView.as_view(), name='contractor_booking_decision'),
 ]

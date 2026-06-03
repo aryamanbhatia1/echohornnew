@@ -11,7 +11,7 @@ const orbitron = Orbitron({
 });
 
 // Floating particle component
-const FloatingParticle = ({ index }: { index: number }) => {
+const FloatingParticle = () => {
   const size = Math.random() * 4 + 2;
   const duration = Math.random() * 3 + 2;
   const delay = Math.random() * 2;
@@ -167,9 +167,10 @@ export default function ReservationForm() {
           message: '',
         });
       }, 5000);
-    } catch (error: any) {
+    } catch (error: unknown) {
       setIsSubmitting(false);
-      alert(error.message || 'Failed to submit reservation. Please try again.');
+      const message = error instanceof Error ? error.message : 'Failed to submit reservation. Please try again.';
+      alert(message);
       console.error('Reservation error:', error);
     }
   };
@@ -204,7 +205,7 @@ export default function ReservationForm() {
       {/* Floating particles */}
       <div className="absolute inset-0 z-10">
         {Array.from({ length: 30 }).map((_, i) => (
-          <FloatingParticle key={i} index={i} />
+          <FloatingParticle key={i} />
         ))}
       </div>
 

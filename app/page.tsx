@@ -4,8 +4,8 @@ import Header from "@/components/header/header";
 const Page = () => {
   return (
     <div>
-      <Home />
       <Header />
+      <Home />
     </div>
   );
 };

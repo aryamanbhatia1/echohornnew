@@ -11,7 +11,7 @@ const orbitron = Orbitron({
 });
 
 // Floating star component
-const FloatingStar = ({ index }: { index: number }) => {
+const FloatingStar = () => {
   const size = Math.random() * 3 + 1;
   const duration = Math.random() * 3 + 2;
   const delay = Math.random() * 2;
@@ -50,7 +50,7 @@ export default function NotFound() {
       {/* Floating stars */}
       <div className="absolute inset-0">
         {Array.from({ length: 50 }).map((_, i) => (
-          <FloatingStar key={i} index={i} />
+          <FloatingStar key={i} />
         ))}
       </div>
 
@@ -87,7 +87,7 @@ export default function NotFound() {
             Lost in Space
           </h2>
           <p className="text-gray-400 text-lg mb-8 max-w-md mx-auto">
-            Oops! Looks like this page has drifted into the void. Let's get you back on track.
+            Oops! Looks like this page has drifted into the void. Let&apos;s get you back on track.
           </p>
         </motion.div>
 

@@ -4,13 +4,21 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "backend": "node server/index.js",
+    "backend:dev": "nodemon server/index.js",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@types/three": "^0.180.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
     "framer-motion": "^12.23.22",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.0.1",
     "next": "^16.0.8",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
@@ -26,6 +34,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
+    "nodemon": "^3.1.11",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

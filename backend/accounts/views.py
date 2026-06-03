@@ -2,11 +2,12 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
-from .models import User, ContractorProfile
+from .models import User
 from .serializers import (
     UserRegistrationSerializer, 
     UserSerializer,
-    ContractorProfileSerializer
+    ContractorProfileSerializer,
+    DriverProfileSerializer,
 )
 
 
@@ -52,6 +53,26 @@ class RegisterContractorView(generics.CreateAPIView):
         }, status=status.HTTP_201_CREATED)
 
 
+class RegisterDriverView(generics.CreateAPIView):
+    """Register a new driver"""
+    queryset = User.objects.all()
+    permission_classes = (AllowAny,)
+    serializer_class = UserRegistrationSerializer
+
+    def create(self, request, *args, **kwargs):
+        data = request.data.copy()
+        data['user_type'] = 'driver'
+
+        serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+
+        return Response({
+            "user": UserSerializer(user).data,
+            "message": "Driver account created successfully. Please complete your profile."
+        }, status=status.HTTP_201_CREATED)
+
+
 class UserDetailView(generics.RetrieveUpdateAPIView):
     """Get and update user profile"""
     serializer_class = UserSerializer
@@ -85,4 +106,29 @@ class CompleteContractorProfileView(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save(user=request.user)
         
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class CompleteDriverProfileView(generics.CreateAPIView):
+    """Complete driver profile after registration"""
+    serializer_class = DriverProfileSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def create(self, request, *args, **kwargs):
+        if request.user.user_type != 'driver':
+            return Response(
+                {"error": "Only drivers can access this endpoint"},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        if hasattr(request.user, 'driver_profile'):
+            return Response(
+                {"error": "Profile already exists"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(user=request.user)
+
         return Response(serializer.data, status=status.HTTP_201_CREATED)

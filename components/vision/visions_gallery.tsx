@@ -8,35 +8,44 @@ import InitialCarousel from './InitialCarousel';
 import SelectedVisionView from './SelectedVisionView';
 
 const VisionsGallery: FC = () => {
-    const [selectedId, setSelectedId] = useState<number | null>(null);
-    const selectedVision = selectedId ? visionsData.find(v => v.id === selectedId) : null;
+  const [selectedId, setSelectedId] = useState<number | null>(3);
+  const selectedVision = selectedId ? visionsData.find((vision) => vision.id === selectedId) : null;
 
-    return (
-        <div className="w-full h-full flex flex-col items-center justify-center relative p-4 mt-16">
-            <motion.h1
-                animate={{
-                    opacity: selectedId ? 0.7 : 1,
-                    y: selectedId ? -150 : 0,
-                    scale: selectedId ? 0.8 : 1,
-                }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className="text-6xl font-extralight mb-16 text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(255,255,255,0.2)] uppercase"
-            >
-                Our Vision
-            </motion.h1>
+  return (
+    <div className="relative z-10 flex min-h-[calc(100vh-92px)] w-full flex-col items-center justify-center px-4 pb-16 pt-32">
+      <div className="mx-auto w-full max-w-7xl">
+        <motion.div
+          animate={{
+            opacity: selectedId ? 0.92 : 1,
+            y: selectedId ? -8 : 0,
+          }}
+          transition={{ duration: 0.35, ease: 'easeInOut' }}
+          className="text-center"
+        >
+          <h1 className="text-5xl font-light uppercase tracking-[0.18em] text-transparent bg-[linear-gradient(180deg,#ffffff,#9fb2d9)] bg-clip-text drop-shadow-[0_4px_30px_rgba(255,255,255,0.15)] md:text-7xl">
+            Our Vision
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-200/80 md:text-lg">
+            Switch between every vision point instantly, explore each idea in detail, and move through the experience without needing to reset the layout.
+          </p>
+        </motion.div>
 
-            <InitialCarousel onSelectVision={setSelectedId} selectedId={selectedId} />
-
-            <AnimatePresence>
-                {selectedVision && (
-                    <SelectedVisionView
-                        selectedVision={selectedVision}
-                        onDeselect={() => setSelectedId(null)}
-                    />
-                )}
-            </AnimatePresence>
+        <div className="mt-14">
+          <InitialCarousel onSelectVision={setSelectedId} selectedId={selectedId} />
         </div>
-    );
+
+        <AnimatePresence mode="wait">
+          {selectedVision && (
+            <SelectedVisionView
+              key={selectedVision.id}
+              selectedVision={selectedVision}
+              onSelectVision={setSelectedId}
+            />
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
 };
 
 export default VisionsGallery;

@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from decimal import Decimal
 
 
 class ServiceRequest(models.Model):
@@ -160,11 +161,46 @@ class Booking(models.Model):
     def save(self, *args, **kwargs):
         # Auto-calculate advance amount
         if self.final_price and self.advance_percentage:
-            self.advance_amount = (self.final_price * self.advance_percentage) / 100
+            percentage = self.advance_percentage
+            if not isinstance(percentage, Decimal):
+                percentage = Decimal(str(percentage))
+            self.advance_amount = (self.final_price * percentage) / Decimal('100')
         super().save(*args, **kwargs)
     
     def __str__(self):
         return f"Booking #{self.id} - {self.driver.name}"
+
+
+class Complaint(models.Model):
+    STATUS_CHOICES = [
+        ('open', 'Open'),
+        ('in_review', 'In Review'),
+        ('resolved', 'Resolved'),
+    ]
+
+    customer = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='complaints'
+    )
+    booking = models.ForeignKey(
+        Booking,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='complaints'
+    )
+    title = models.CharField(max_length=200)
+    detail = models.TextField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='open')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"Complaint #{self.id} - {self.customer.email}"
 
 
 class Rating(models.Model):
@@ -184,6 +220,9 @@ class Rating(models.Model):
         related_name='ratings_received'
     )
     rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])  # 1-5 stars
+    punctuality_rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)], default=5)
+    safety_rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)], default=5)
+    cargo_care_rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)], default=5)
     review = models.TextField(blank=True)
     
     created_at = models.DateTimeField(auto_now_add=True)

@@ -1,15 +1,17 @@
 from rest_framework import generics, status
+from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from django.utils import timezone
-from .models import ServiceRequest, Booking, Rating
+from .models import ServiceRequest, Booking, Complaint, Rating
 from .serializers import (
     ServiceRequestSerializer, BookingSerializer,
-    BookingCreateSerializer, RatingSerializer
+    BookingCreateSerializer, ComplaintSerializer, RatingSerializer
 )
 from contractor.models import Driver
 from contractor.serializers import AvailableDriverSerializer
+from core.services import estimate_service_request_quote, refresh_contractor_metrics, refresh_driver_metrics
 
 
 class ServiceRequestCreateView(generics.CreateAPIView):
@@ -19,13 +21,10 @@ class ServiceRequestCreateView(generics.CreateAPIView):
     
     def perform_create(self, serializer):
         service_request = serializer.save(customer=self.request.user)
-        
-        # TODO: Call ML model here to get suggestions
-        # For now, just save the request
-        # ml_result = call_ml_model(service_request)
-        # service_request.ml_suggested_vehicle_type = ml_result['vehicle_type']
-        # service_request.ml_suggested_price = ml_result['price']
-        # service_request.save()
+        suggested_vehicle, suggested_price = estimate_service_request_quote(service_request)
+        service_request.ml_suggested_vehicle_type = suggested_vehicle
+        service_request.ml_suggested_price = suggested_price
+        service_request.save(update_fields=['ml_suggested_vehicle_type', 'ml_suggested_price', 'updated_at'])
 
 
 class ServiceRequestListView(generics.ListAPIView):
@@ -89,7 +88,7 @@ class BookingCreateView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
     
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+        serializer = self.get_serializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)
         
         # Create booking
@@ -198,4 +197,24 @@ class RatingCreateView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
     
     def perform_create(self, serializer):
-        serializer.save(rated_by=self.request.user)
+        rating = serializer.save(rated_by=self.request.user)
+        if hasattr(rating.rated_user, 'driver_account'):
+            refresh_driver_metrics(rating.rated_user.driver_account)
+            refresh_contractor_metrics(rating.rated_user.driver_account.contractor)
+
+
+class ComplaintListCreateView(generics.ListCreateAPIView):
+    serializer_class = ComplaintSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        queryset = Complaint.objects.select_related('customer', 'booking')
+        if self.request.user.is_staff:
+            return queryset
+        return queryset.filter(customer=self.request.user)
+
+    def perform_create(self, serializer):
+        booking = serializer.validated_data.get('booking')
+        if booking and booking.service_request.customer != self.request.user:
+            raise ValidationError("You can only attach your own booking to a complaint.")
+        serializer.save(customer=self.request.user)

@@ -1,232 +1,163 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
-import { motion, useMotionValue, useTransform, useMotionTemplate, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Orbitron } from 'next/font/google';
-import { FaBell } from 'react-icons/fa6';
+import { FaBell, FaTruckFast } from 'react-icons/fa6';
 
 const orbitron = Orbitron({
   subsets: ['latin'],
   weight: ['400', '700'],
 });
 
-const Star = React.memo(() => {
-  const size = Math.random() * 2 + 1;
-  const initialX = Math.random() * 100;
-  const initialY = Math.random() * 100;
-  const duration = Math.random() * 2 + 1;
-
-  return (
-    <motion.div
-      className="absolute rounded-full bg-white"
-      style={{
-        width: size,
-        height: size,
-        left: `${initialX}%`,
-        top: `${initialY}%`,
-        willChange: 'opacity',
-      }}
-      animate={{ opacity: [0, 1, 0] }}
-      transition={{ duration, repeat: Infinity, ease: 'easeInOut' }}
-    />
-  );
-});
-Star.displayName = 'Star';
-
-const FloatingText = React.memo(() => {
-    const text = "Coming Soon...";
-    return (
-        <h1 className={`${orbitron.className} text-5xl md:text-7xl font-bold text-white text-center tracking-widest drop-shadow-2xl`}>
-            {text.split("").map((char, index) => (
-                <motion.span
-                    key={index}
-                    initial={{ y: 0 }}
-                    animate={{ y: [-5, 5, -5] }}
-                    transition={{ duration: 4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut", delay: index * 0.1 }}
-                    style={{ display: 'inline-block', willChange: 'transform' }}
-                >
-                    {char === " " ? "\u00A0" : char}
-                </motion.span>
-            ))}
-        </h1>
-    );
-});
-FloatingText.displayName = 'FloatingText';
+const highlights = [
+  'Ranked driver marketplace',
+  'Fleet intelligence and income reporting',
+  'Truck pooling and route optimisation',
+];
 
 export default function ComingSoon() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0.5);
-  const mouseY = useMotionValue(0.5);
   const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [serverMessage, setServerMessage] = useState('');
 
-  const handleMouseMove = ({ clientX, clientY, currentTarget }: React.MouseEvent<HTMLDivElement>) => {
-    if (!currentTarget) return;
-    const { left, top, width, height } = currentTarget.getBoundingClientRect();
-    mouseX.set((clientX - left) / width);
-    mouseY.set((clientY - top) / height);
-  };
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
 
-  const starsX = useTransform(mouseX, [0, 1], ["5%", "-5%"]);
-  const starsY = useTransform(mouseY, [0, 1], ["5%", "-5%"]);
-  const textX = useTransform(mouseX, [0, 1], ["-2%", "2%"]);
-  const textY = useTransform(mouseY, [0, 1], ["-5%", "5%"]);
-  
-  const mouseXPercent = useTransform(mouseX, val => `${val * 100}%`);
-  const mouseYPercent = useTransform(mouseY, val => `${val * 100}%`);
-  
-  const aurora = useMotionTemplate`
-    radial-gradient(400px at ${mouseXPercent} ${mouseYPercent}, rgba(29, 78, 216, 0.15), transparent 80%)
-  `;
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
     if (!email.trim()) {
       setError('Email is required');
       return;
     }
-    
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setError('Invalid email format');
       return;
     }
 
-    setIsSubmitted(true);
     setError('');
-    
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
+    setServerMessage('');
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/notify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const payload = (await response.json()) as { ok?: boolean; error?: string; queued?: boolean; message?: string };
+      if (!response.ok) {
+        throw new Error(payload.error || 'Unable to send confirmation email.');
+      }
+
+      setIsSubmitted(true);
+      setServerMessage(
+        payload.message ||
+          'Thanks for choosing EchoHorn. You will be kept up to date.',
+      );
       setEmail('');
-    }, 3000);
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : 'Unable to send confirmation email.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
-    <div
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      className="relative w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center"
-    >
-        <motion.div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('/Coming_Soon.png')`, scale: 1.1, willChange: 'transform' }}
-        />
-        <motion.div
-            className="absolute inset-0 z-10"
-            style={{ backgroundImage: aurora, willChange: 'background-image' }}
-        />
-        <motion.div
-            className="absolute inset-[-10%] z-20"
-            style={{ x: starsX, y: starsY, willChange: 'transform' }}
-        >
-            {Array.from({ length: 100 }).map((_, i) => (
-                <Star key={i} />
-            ))}
-        </motion.div>
-        
-        <motion.div 
-            className="relative z-30 flex flex-col items-center"
-            style={{ x: textX, y: textY, willChange: 'transform' }}
-        >
-            <FloatingText />
-            
-            {/* Newsletter signup */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.8 }}
-                className="mt-12 w-full max-w-md px-4"
-            >
-                <AnimatePresence mode="wait">
-                    {!isSubmitted ? (
-                        <motion.div
-                            key="form"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <p className="text-white/80 text-center mb-6 text-lg">
-                                Get notified when we launch
-                            </p>
-                            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-                                <div className="flex-1">
-                                    <input
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => {
-                                            setEmail(e.target.value);
-                                            setError('');
-                                        }}
-                                        data-testid="newsletter-email-input"
-                                        placeholder="Enter your email"
-                                        className="w-full px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-all duration-300 backdrop-blur-sm"
-                                    />
-                                    {error && (
-                                        <motion.p
-                                            initial={{ opacity: 0, y: -10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="text-red-400 text-sm mt-2 ml-4"
-                                        >
-                                            {error}
-                                        </motion.p>
-                                    )}
-                                </div>
-                                <motion.button
-                                    type="submit"
-                                    data-testid="newsletter-submit-button"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="flex items-center justify-center gap-2 bg-yellow-400 text-black font-bold px-8 py-3 rounded-full hover:bg-yellow-500 transition-colors duration-300 shadow-lg shadow-yellow-500/30"
-                                >
-                                    <FaBell />
-                                    Notify Me
-                                </motion.button>
-                            </form>
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            key="success"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.8 }}
-                            className="text-center"
-                        >
-                            <motion.div
-                                initial={{ scale: 0 }}
-                                animate={{ scale: 1 }}
-                                transition={{ type: 'spring', stiffness: 200 }}
-                                className="w-16 h-16 mx-auto mb-4 bg-green-500/20 rounded-full flex items-center justify-center"
-                            >
-                                <motion.svg
-                                    initial={{ pathLength: 0 }}
-                                    animate={{ pathLength: 1 }}
-                                    transition={{ duration: 0.5, delay: 0.2 }}
-                                    className="w-8 h-8 text-green-400"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <motion.path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M5 13l4 4L19 7"
-                                    />
-                                </motion.svg>
-                            </motion.div>
-                            <p className="text-white text-xl font-semibold">
-                                You're on the list! 🎉
-                            </p>
-                            <p className="text-white/60 mt-2">
-                                We'll notify you when we launch
-                            </p>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </motion.div>
-        </motion.div>
+    <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.32),_transparent_28%),radial-gradient(circle_at_bottom,_rgba(234,179,8,0.18),_transparent_24%),linear-gradient(180deg,_#030712_0%,_#111827_42%,_#020617_100%)]">
+      <div className="absolute inset-0 bg-[url('/img13.png')] bg-cover bg-center opacity-15" />
+      <div className="absolute inset-0 bg-[linear-gradient(transparent_0%,rgba(2,6,23,0.7)_100%)]" />
+
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 py-32 sm:px-6 lg:px-8">
+        <div className="grid w-full gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="flex flex-col justify-center">
+            <div className="mb-6 inline-flex w-fit items-center gap-3 rounded-full border border-sky-300/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-100">
+              <FaTruckFast className="h-4 w-4" />
+              AQ Logistics product updates
+            </div>
+            <h1 className={`${orbitron.className} max-w-4xl text-5xl font-bold leading-tight text-white sm:text-7xl`}>
+              A more intelligent logistics experience is taking shape.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+              We are preparing the next evolution of AQ Logistics with live customer booking, driver intelligence, safer cargo handling, and more sophisticated fleet visibility.
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {highlights.map((item) => (
+                <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <div className="text-sm font-medium text-slate-100">{item}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[32px] border border-white/10 bg-slate-950/60 p-8 shadow-2xl backdrop-blur-xl">
+            <p className="text-sm uppercase tracking-[0.2em] text-amber-200/80">Notify me</p>
+            <h2 className={`${orbitron.className} mt-4 text-3xl font-bold text-white`}>
+              Leave your email for future platform updates.
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              Enter your email so we can keep you informed as new EchoHorn capabilities, launches, and product milestones go live.
+            </p>
+
+            <AnimatePresence mode="wait">
+              {!isSubmitted ? (
+                <motion.form
+                  key="form"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  onSubmit={handleSubmit}
+                  className="mt-8 space-y-4"
+                >
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                      setError('');
+                    }}
+                    data-testid="newsletter-email-input"
+                    placeholder="Enter your email"
+                    className="w-full rounded-2xl border border-white/10 bg-black/30 px-5 py-4 text-white placeholder:text-slate-500 focus:border-amber-300 focus:outline-none"
+                  />
+                  {error && <p className="text-sm text-rose-300">{error}</p>}
+                  <button
+                    type="submit"
+                    data-testid="newsletter-submit-button"
+                    disabled={isLoading}
+                    className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-amber-300 px-5 py-4 font-semibold text-slate-950 transition hover:bg-amber-200 disabled:opacity-60"
+                  >
+                    <FaBell className="h-4 w-4" />
+                    {isLoading ? 'Sending...' : 'Notify Me'}
+                  </button>
+                </motion.form>
+              ) : (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="mt-8 rounded-3xl border border-emerald-300/20 bg-emerald-400/10 p-6"
+                >
+                  <div className="text-lg font-semibold text-emerald-100">You&apos;re on the list.</div>
+                  <p className="mt-3 text-sm leading-7 text-slate-200">{serverMessage}</p>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="mt-5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white"
+                  >
+                    Add another email
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

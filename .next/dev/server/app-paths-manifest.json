@@ -1,0 +1,10 @@
+{
+  "/about/page": "app/about/page.js",
+  "/consumer/page": "app/consumer/page.js",
+  "/features/page": "app/features/page.js",
+  "/fleet-portal/page": "app/fleet-portal/page.js",
+  "/get-started/page": "app/get-started/page.js",
+  "/page": "app/page.js",
+  "/product/page": "app/product/page.js",
+  "/vision/page": "app/vision/page.js"
+}

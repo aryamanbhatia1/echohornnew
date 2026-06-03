@@ -4,9 +4,9 @@ from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY', default='echohorn-dev-secret-key')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
+ALLOWED_HOSTS = [host for host in config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',') if host]
 
 # Application definition
 INSTALLED_APPS = [
@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     # Local apps
     'accounts',
     'core',
+    'consumer',
+    'contractor',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +82,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 

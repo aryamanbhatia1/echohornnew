@@ -8,97 +8,133 @@ import { visionsData, type Vision } from './vision-data';
 
 interface SelectedVisionViewProps {
   selectedVision: Vision;
-  onDeselect: () => void;
+  onSelectVision: (id: number) => void;
 }
 
-const SelectedVisionView: FC<SelectedVisionViewProps> = React.memo(({ selectedVision, onDeselect }) => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useTransform(y, [-400, 400], [5, -5]);
-  const rotateY = useTransform(x, [-400, 400], [-5, 5]);
+const SelectedVisionView: FC<SelectedVisionViewProps> = React.memo(
+  ({ selectedVision, onSelectVision }) => {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const rotateX = useTransform(y, [-400, 400], [4, -4]);
+    const rotateY = useTransform(x, [-400, 400], [-4, 4]);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    x.set(event.clientX - rect.left - rect.width / 2);
-    y.set(event.clientY - rect.top - rect.height / 2);
-  };
-  const handleMouseLeave = () => { x.set(0); y.set(0); };
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+      const rect = event.currentTarget.getBoundingClientRect();
+      x.set(event.clientX - rect.left - rect.width / 2);
+      y.set(event.clientY - rect.top - rect.height / 2);
+    };
 
-  const getArcPosition = (index: number, total: number, radius: number) => {
-    const angle = (index / (total - 1)) * Math.PI;
-    return { x: -radius * Math.sin(angle), y: radius * Math.cos(angle) };
-  };
+    const handleMouseLeave = () => {
+      x.set(0);
+      y.set(0);
+    };
 
-  const thumbnailVisions = visionsData.filter(v => v.id !== selectedVision.id);
+    const getRingPosition = (index: number, total: number, radius: number) => {
+      const angle = (index / total) * Math.PI * 2 - Math.PI / 2;
+      return {
+        x: Math.cos(angle) * radius,
+        y: Math.sin(angle) * radius,
+      };
+    };
 
-  return (
-    <motion.div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
-      {/* Full-screen overlay */}
-      <motion.div
-        className="absolute inset-0 bg-black/30 backdrop-blur-md"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: { duration: 0.3, delay: 0.2 } }}
-        onClick={onDeselect}
-      />
-      <motion.div
-        className="w-full max-w-7xl h-full flex flex-col md:flex-row gap-8 items-center justify-center relative"
-        exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
+    const thumbnailVisions = visionsData.filter((vision) => vision.id !== selectedVision.id);
+
+    return (
+      <motion.section
+        className="relative z-10 mt-8 w-full max-w-7xl"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
       >
-        {/* Left Side: Interactive Image Arc */}
-        <motion.div
-          className="w-full md:w-1/2 flex items-center justify-center"
-          style={{ perspective: 1000 }}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        >
-          <motion.div className="relative w-[500px] h-[500px]" style={{ rotateX, rotateY }}>
-            <motion.div className="absolute inset-0 rounded-full" style={{ background: `radial-gradient(circle, ${selectedVision.glowColor}22 0%, transparent 60%)` }} />
-            <motion.div layoutId={`vision-card-${selectedVision.id}`} className="absolute inset-0 flex items-center justify-center cursor-pointer" onClick={onDeselect}>
-              <Image
-                key={selectedVision.id}
-                src={selectedVision.imgSrc}
-                alt={selectedVision.title}
-                width={320}
-                height={320}
-                className="object-cover rounded-full shadow-2xl shadow-black/50"
-                priority // This image is important when selected, so we prioritize it
+        <div className="overflow-hidden rounded-[38px] border border-white/10 bg-[linear-gradient(135deg,rgba(6,11,23,0.94),rgba(18,31,52,0.82))] shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+          <div className="grid gap-8 p-6 md:p-8 xl:grid-cols-[1.05fr_0.95fr]">
+            <motion.div
+              className="relative flex min-h-[460px] items-center justify-center overflow-hidden rounded-[32px] border border-white/10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_56%),linear-gradient(180deg,rgba(10,14,29,0.95),rgba(5,8,20,0.98))]"
+              style={{ perspective: 1000 }}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div
+                className="pointer-events-none absolute inset-0 opacity-80"
+                style={{
+                  background: `radial-gradient(circle at center, ${selectedVision.glowColor}1f 0%, transparent 60%)`,
+                }}
               />
-            </motion.div>
-            {/* Thumbnail Arc */}
-            {thumbnailVisions.map((vision, index) => {
-              const { x, y } = getArcPosition(index, thumbnailVisions.length, 220);
-              return (
-                <motion.div
-                  key={vision.id}
-                  className="absolute cursor-pointer rounded-full overflow-hidden bg-black/30 border-2 border-transparent hover:border-yellow-400"
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 0.7 }}
-                  exit={{ scale: 0, opacity: 0 }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.2 + index * 0.1 }}
-                  style={{ top: `calc(50% - 50px + ${y}px)`, left: `calc(50% - 50px + ${x}px)`, width: '100px', height: '100px' }}
-                  whileHover={{ scale: 1.15, opacity: 1, zIndex: 10 }}
-                >
-                  <Image src={vision.imgSrc} alt={vision.title} width={100} height={100} className="object-contain p-2" />
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </motion.div>
 
-        {/* Right Side: Text Content */}
-        <motion.div className="w-full md:w-1/2 text-center md:text-left relative">
-          <AnimatePresence mode="wait">
-            <motion.h2 key={`title-${selectedVision.id}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5 }} className="relative text-4xl lg:text-5xl font-bold text-yellow-400 mb-6">{selectedVision.title}</motion.h2>
-          </AnimatePresence>
-          <AnimatePresence mode="wait">
-            <motion.p key={`desc-${selectedVision.id}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ delay: 0.1, duration: 0.5 }} className="relative text-xl lg:text-2xl text-white/80 leading-relaxed">{selectedVision.description}</motion.p>
-          </AnimatePresence>
-        </motion.div>
-      </motion.div>
-    </motion.div>
-  );
-});
+              <motion.div
+                className="relative flex h-[340px] w-[340px] items-center justify-center rounded-full border border-white/10 bg-black/30"
+                style={{ rotateX, rotateY }}
+              >
+                <motion.div
+                  layoutId={`vision-card-${selectedVision.id}`}
+                  className="relative flex h-[240px] w-[240px] items-center justify-center overflow-hidden rounded-full border border-white/10 bg-black/50 shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
+                >
+                  <Image
+                    key={selectedVision.id}
+                    src={selectedVision.imgSrc}
+                    alt={selectedVision.title}
+                    width={240}
+                    height={240}
+                    className="h-full w-full object-cover"
+                    priority
+                  />
+                </motion.div>
+
+                {thumbnailVisions.map((vision, index) => {
+                  const position = getRingPosition(index, thumbnailVisions.length, 186);
+                  return (
+                    <motion.button
+                      key={vision.id}
+                      type="button"
+                      onClick={() => onSelectVision(vision.id)}
+                      className="absolute flex h-[88px] w-[88px] items-center justify-center overflow-hidden rounded-full border border-white/15 bg-slate-950/70 shadow-[0_15px_40px_rgba(0,0,0,0.35)] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-300"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      exit={{ scale: 0.8, opacity: 0 }}
+                      transition={{ type: 'spring', stiffness: 220, damping: 18, delay: 0.1 + index * 0.06 }}
+                      style={{
+                        top: `calc(50% - 44px + ${position.y}px)`,
+                        left: `calc(50% - 44px + ${position.x}px)`,
+                      }}
+                      whileHover={{ scale: 1.08, borderColor: vision.glowColor, boxShadow: `0 0 26px ${vision.glowColor}` }}
+                      whileTap={{ scale: 0.96 }}
+                      aria-label={`Show ${vision.title}`}
+                    >
+                      <Image src={vision.imgSrc} alt={vision.title} width={88} height={88} className="h-full w-full object-cover" />
+                    </motion.button>
+                  );
+                })}
+              </motion.div>
+            </motion.div>
+
+            <div className="flex flex-col justify-center">
+              <div className="mb-6 flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-yellow-300/20 bg-yellow-400/10 px-4 py-2 text-sm uppercase tracking-[0.24em] text-yellow-100">
+                  Vision Focus
+                </span>
+              </div>
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedVision.id}
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -18 }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <h2 className="text-4xl font-bold tracking-tight text-yellow-300 lg:text-5xl">{selectedVision.title}</h2>
+                  <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 lg:text-xl">{selectedVision.description}</p>
+
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+    );
+  },
+);
+
 SelectedVisionView.displayName = 'SelectedVisionView';
 
 export default SelectedVisionView;

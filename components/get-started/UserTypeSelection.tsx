@@ -1,236 +1,107 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Orbitron, Inter } from 'next/font/google';
-import { FaTruck, FaUser, FaArrowRight } from 'react-icons/fa6';
+import { Inter, Space_Grotesk } from 'next/font/google';
+import {
+  FaArrowRight,
+  FaTruck,
+  FaUser,
+  FaUserGear,
+} from 'react-icons/fa6';
 import Link from 'next/link';
 
-const orbitron = Orbitron({
+const heading = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['500', '700'],
 });
 
-const inter = Inter({
+const body = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
 });
 
-const FloatingParticle = ({ index }: { index: number }) => {
-  const size = Math.random() * 4 + 2;
-  const duration = Math.random() * 3 + 2;
-  const delay = Math.random() * 2;
-  const initialX = Math.random() * 100;
-  const initialY = Math.random() * 100;
-
-  return (
-    <motion.div
-      className="absolute rounded-full bg-yellow-400/30"
-      style={{
-        width: size,
-        height: size,
-        left: `${initialX}%`,
-        top: `${initialY}%`,
-      }}
-      animate={{
-        y: [0, -30, 0],
-        x: [0, Math.random() * 20 - 10, 0],
-        opacity: [0.3, 0.8, 0.3],
-      }}
-      transition={{
-        duration,
-        delay,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-    />
-  );
-};
+const roles = [
+  {
+    title: 'Consumer',
+    href: '/consumer',
+    icon: FaUser,
+    accent: 'from-cyan-400/35 via-sky-500/14 to-transparent',
+    border: 'border-cyan-300/30',
+    badge: 'Book and compare',
+    bullets: ['Create an account and sign in', 'Define route and pickup timing', 'Choose from ranked driver options'],
+  },
+  {
+    title: 'Driver',
+    href: '/driver',
+    icon: FaUserGear,
+    accent: 'from-emerald-400/35 via-lime-500/12 to-transparent',
+    border: 'border-emerald-300/30',
+    badge: 'Trips and payouts',
+    bullets: ['Access role-based login and signup', 'Review truck and trip assignments', 'Track points, ratings, and payout visibility'],
+  },
+  {
+    title: 'Fleet Owner',
+    href: '/fleet-portal',
+    icon: FaTruck,
+    accent: 'from-orange-400/35 via-red-500/12 to-transparent',
+    border: 'border-orange-300/30',
+    badge: 'Operations control',
+    bullets: ['Register trucks and onboard drivers', 'Track payments, dues, and revenue', 'Review fleet operations in one view'],
+  },
+];
 
 export default function UserTypeSelection() {
   return (
-    <div className="relative w-full min-h-screen bg-black overflow-hidden flex items-center justify-center py-32 px-4">
-      {/* Animated background */}
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('/Coming_Soon.png')`, scale: 1.1, opacity: 0.3 }}
-      />
-      
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80" />
+    <div className="relative min-h-screen overflow-hidden bg-[linear-gradient(180deg,_#030712_0%,_#111827_100%)] px-4 py-24 text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,0.14),transparent_18%),radial-gradient(circle_at_78%_18%,rgba(34,211,238,0.16),transparent_18%),radial-gradient(circle_at_bottom,rgba(59,130,246,0.12),transparent_24%)]" />
+      <div className="absolute left-[8%] top-32 h-44 w-44 rounded-full bg-amber-300/10 blur-3xl" />
+      <div className="absolute right-[10%] top-28 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="absolute bottom-16 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 z-10">
-        {Array.from({ length: 25 }).map((_, i) => (
-          <FloatingParticle key={i} index={i} />
-        ))}
-      </div>
+      <div className="relative mx-auto flex min-h-[calc(100vh-12rem)] max-w-7xl items-center justify-center">
+        <div className="relative w-full grid gap-6 lg:grid-cols-3">
+          {roles.map((role, index) => (
+            <motion.div
+              key={role.title}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.12 }}
+            >
+              <Link href={role.href}>
+                <div className={`group relative h-full overflow-hidden rounded-[34px] border ${role.border} bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-8 shadow-[0_24px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-white/40`}>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${role.accent}`} />
+                  <div className="absolute -right-10 top-4 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
+                  <div className="absolute -left-10 bottom-6 h-28 w-28 rounded-full bg-black/20 blur-2xl" />
+                  <div className="absolute inset-x-8 top-6 flex items-center justify-between">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/10 shadow-[0_12px_30px_rgba(0,0,0,0.2)]">
+                      <role.icon className="h-8 w-8" />
+                    </div>
+                    <span className={`${body.className} rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-slate-100`}>
+                      {role.badge}
+                    </span>
+                  </div>
 
-      {/* Main content */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-20 w-full max-w-5xl"
-      >
-        {/* Title */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-center mb-16"
-        >
-          <h1 className={`${orbitron.className} text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6`}>
-            How would you like to <span className="text-yellow-400">get started?</span>
-          </h1>
-          <p className={`${inter.className} text-gray-300 text-lg md:text-xl max-w-2xl mx-auto`}>
-            Choose your path to experience the future of fleet management and logistics
-          </p>
-        </motion.div>
-
-        {/* Selection cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {/* Consumer Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            <Link href="/consumer" target="_blank" data-testid="consumer-card-link">
-              <motion.div
-                whileHover={{ scale: 1.03, y: -5 }}
-                whileTap={{ scale: 0.98 }}
-                className="group relative h-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/20 p-8 md:p-10 cursor-pointer overflow-hidden transition-all duration-500 hover:border-yellow-400/50 hover:shadow-2xl hover:shadow-yellow-400/10"
-              >
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-yellow-400/10 to-transparent" />
-                
-                {/* Icon */}
-                <motion.div
-                  className="relative z-10 w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-yellow-400/30"
-                  whileHover={{ rotate: [0, -10, 10, 0] }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <FaUser className="w-10 h-10 text-black" />
-                </motion.div>
-
-                {/* Content */}
-                <h2 className={`${orbitron.className} relative z-10 text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300`}>
-                  I&apos;m a Consumer
-                </h2>
-                <p className={`${inter.className} relative z-10 text-gray-400 text-base md:text-lg mb-8 leading-relaxed`}>
-                  Looking to book delivery services or need transportation solutions for your packages and goods.
-                </p>
-
-                {/* Features list */}
-                <ul className={`${inter.className} relative z-10 space-y-3 mb-8`}>
-                  <li className="flex items-center gap-3 text-gray-300">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                    Book trial deliveries
-                  </li>
-                  <li className="flex items-center gap-3 text-gray-300">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                    Track your packages
-                  </li>
-                  <li className="flex items-center gap-3 text-gray-300">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                    Get competitive rates
-                  </li>
-                </ul>
-
-                {/* CTA */}
-                <div className="relative z-10 flex items-center gap-2 text-yellow-400 font-semibold">
-                  <span>Get Started</span>
-                  <motion.div
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <FaArrowRight />
-                  </motion.div>
+                  <div className="relative mt-24">
+                    <h2 className={`${heading.className} text-3xl font-semibold`}>{role.title}</h2>
+                    <ul className={`${body.className} mt-5 space-y-3 text-sm text-slate-100`}>
+                      {role.bullets.map((bullet) => (
+                        <li key={bullet} className="flex items-start gap-3">
+                          <span className="mt-2 h-2 w-2 rounded-full bg-amber-300" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className={`${body.className} mt-8 inline-flex items-center gap-2 text-sm font-semibold text-amber-100`}>
+                      Open portal
+                      <FaArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-            </Link>
-          </motion.div>
-
-          {/* Truck Driver / Fleet Owner Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
-            <Link href="/fleet-portal" target="_blank" data-testid="fleet-owner-card-link">
-              <motion.div
-                whileHover={{ scale: 1.03, y: -5 }}
-                whileTap={{ scale: 0.98 }}
-                className="group relative h-full bg-gradient-to-br from-orange-500/10 to-red-500/5 backdrop-blur-xl rounded-3xl border border-orange-400/20 p-8 md:p-10 cursor-pointer overflow-hidden transition-all duration-500 hover:border-orange-400/50 hover:shadow-2xl hover:shadow-orange-400/10"
-              >
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-orange-400/10 to-transparent" />
-                
-                {/* Icon */}
-                <motion.div
-                  className="relative z-10 w-20 h-20 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-400/30"
-                  whileHover={{ rotate: [0, -10, 10, 0] }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <FaTruck className="w-10 h-10 text-white" />
-                </motion.div>
-
-                {/* Content */}
-                <h2 className={`${orbitron.className} relative z-10 text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors duration-300`}>
-                  Truck Driver / Fleet Owner
-                </h2>
-                <p className={`${inter.className} relative z-10 text-gray-400 text-base md:text-lg mb-8 leading-relaxed`}>
-                  Join our network of professional drivers and fleet operators to grow your business.
-                </p>
-
-                {/* Features list */}
-                <ul className={`${inter.className} relative z-10 space-y-3 mb-8`}>
-                  <li className="flex items-center gap-3 text-gray-300">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full" />
-                    Register your fleet
-                  </li>
-                  <li className="flex items-center gap-3 text-gray-300">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full" />
-                    Get matched with jobs
-                  </li>
-                  <li className="flex items-center gap-3 text-gray-300">
-                    <span className="w-2 h-2 bg-orange-400 rounded-full" />
-                    Earn fair rewards
-                  </li>
-                </ul>
-
-                {/* CTA */}
-                <div className="relative z-10 flex items-center gap-2 text-orange-400 font-semibold">
-                  <span>Register Now</span>
-                  <motion.div
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <FaArrowRight />
-                  </motion.div>
-                </div>
-              </motion.div>
-            </Link>
-          </motion.div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
-
-        {/* Back to home link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="text-center mt-12"
-        >
-          <Link 
-            href="/" 
-            className={`${inter.className} text-gray-400 hover:text-yellow-400 transition-colors duration-300`}
-            data-testid="back-to-home-link"
-          >
-            ← Back to Home
-          </Link>
-        </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }
