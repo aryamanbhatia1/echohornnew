@@ -8,6 +8,8 @@ const authRoutes = require('./routes/auth');
 const consumerRoutes = require('./routes/consumer');
 const contractorRoutes = require('./routes/contractor');
 const adminRoutes = require('./routes/admin');
+const { initExcelFile } = require('./utils/excelLogger');
+const { users, trucks, drivers } = require('./data/memoryStore');
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -41,6 +43,7 @@ app.use((error, req, res, next) => {
 });
 
 connectDB().finally(() => {
+  initExcelFile(users, trucks, drivers);
   app.listen(port, () => {
     console.log(`EchoHorn JavaScript backend running on http://localhost:${port}`);
   });

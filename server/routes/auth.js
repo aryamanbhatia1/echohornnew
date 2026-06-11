@@ -5,6 +5,7 @@ const { isMongoConnected } = require('../config/db');
 const User = require('../models/User');
 const { protect, signToken } = require('../middleware/auth');
 const { validateUserRegistration } = require('../utils/validation');
+const { appendUser } = require('../utils/excelLogger');
 
 const router = express.Router();
 
@@ -41,6 +42,7 @@ async function register(req, res, userType) {
         },
         activity_log: [{ event: 'account_created', source: 'api' }],
       });
+      appendUser(user);
       return res.status(201).json({ user: publicUser(user), message: 'Account created.' });
     }
 
@@ -62,6 +64,7 @@ async function register(req, res, userType) {
       activity_log: [{ event: 'account_created', source: 'api' }],
     };
     users.push(user);
+    appendUser(user);
     return res.status(201).json({ user: publicUser(user), message: 'Account created in memory database.' });
   } catch (error) {
     return res.status(400).json({ error: error.message });

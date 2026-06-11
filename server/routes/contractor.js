@@ -5,6 +5,7 @@ const { Booking } = require('../models/Booking');
 const Truck = require('../models/Truck');
 const { protect } = require('../middleware/auth');
 const { validateTruck } = require('../utils/validation');
+const { appendTruck } = require('../utils/excelLogger');
 
 const router = express.Router();
 
@@ -44,6 +45,7 @@ router.post('/vehicles', protect, requireContractor, async (req, res) => {
         },
         service_history: [{ note: 'Vehicle onboarded to fleet.', serviced_on: new Date() }],
       });
+      appendTruck({ ...truck.toObject(), id: String(truck._id) });
       return res.status(201).json({ ...truck.toObject(), id: String(truck._id) });
     }
     const truck = {
@@ -70,6 +72,7 @@ router.post('/vehicles', protect, requireContractor, async (req, res) => {
       service_history: [{ note: 'Vehicle onboarded to fleet.', serviced_on: new Date().toISOString() }],
     };
     trucks.unshift(truck);
+    appendTruck(truck);
     return res.status(201).json(truck);
   } catch (error) {
     return res.status(400).json({ error: error.message });
